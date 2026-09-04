@@ -276,6 +276,64 @@
         </div>
       </div>
     </div>
+
+    <!-- 精選婚紗藝廊 (Interactive Photo Carousel - 直式 1045:1567 長方形黃金比例) -->
+    <div class="mt-12 relative group max-w-sm sm:max-w-md mx-auto" id="wedding-carousel">
+      <div class="relative rounded-3xl overflow-hidden shadow-card-shadow border border-stone-200/80 aspect-[1045/1567] bg-stone-900">
+        <!-- Slides Container -->
+        <div id="carousel-slides" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+          
+          <!-- Slide 1 -->
+          <div class="min-w-full h-full relative shrink-0">
+            <img src="https://i.postimg.cc/yYSGKsCx/S-425074712-0.jpg" alt="Li & Yu Wedding Photo 1" class="w-full h-full object-cover object-center opacity-95" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
+              <div class="text-white">
+                <p class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase mb-1">Moment of Eternity</p>
+                <p class="font-serifTc text-lg sm:text-xl font-light tracking-widest text-stone-100">執子之手 ‧ 與子偕老</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="min-w-full h-full relative shrink-0">
+            <img src="https://i.postimg.cc/gc69zvvn/S-425074694.jpg" alt="Li & Yu Wedding Photo 2" class="w-full h-full object-cover object-center opacity-95" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
+              <div class="text-white">
+                <p class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase mb-1">Journey of Love</p>
+                <p class="font-serifTc text-lg sm:text-xl font-light tracking-widest text-stone-100">相知相守 ‧ 歲月靜好</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="min-w-full h-full relative shrink-0">
+            <img src="https://i.postimg.cc/C1Gj7P3f/S-425074711-0.jpg" alt="Li & Yu Wedding Photo 3" class="w-full h-full object-cover object-center opacity-95" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
+              <div class="text-white">
+                <p class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase mb-1">Warmth of Love</p>
+                <p class="font-serifTc text-lg sm:text-xl font-light tracking-widest text-stone-100">溫柔相伴 ‧ 餘生皆你</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel Left/Right Nav Buttons -->
+        <button onclick="prevSlide()" aria-label="Previous Slide" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-stone-900/40 hover:bg-stone-900/80 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 active:scale-95 z-10">
+          <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
+        </button>
+        <button onclick="nextSlide()" aria-label="Next Slide" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-stone-900/40 hover:bg-stone-900/80 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 active:scale-95 z-10">
+          <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
+        </button>
+
+        <!-- Indicators / Dots -->
+        <div id="carousel-dots" class="absolute bottom-4 right-6 flex items-center gap-2 z-10">
+          <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white transition-all shadow-sm" aria-label="Slide 1"></button>
+          <button onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all shadow-sm" aria-label="Slide 2"></button>
+          <button onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all shadow-sm" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="details" class="py-20 px-4 bg-stone-100/50">
@@ -591,129 +649,97 @@
   <script>
     var submitted = false;
 
-    // 1. 藝術倒數計時器 Logic
-    function startCountdown() {
-      // 標的婚禮時間：2026年12月20日 12:00:00
-      const targetDate = new Date('2026-12-20T12:00:00+08:00').getTime();
+    // ... existing countdown & accordion script ...
 
-      function update() {
-        const now = new Date().getTime();
-        const difference = targetDate - now;
+    // 5. 輪播藝廊控制器 Logic
+    let currentSlide = 0;
+    const totalSlides = 3;
+    let carouselTimer = null;
 
-        if (difference > 0) {
-          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    function updateCarousel() {
+      const slides = document.getElementById('carousel-slides');
+      const dotsContainer = document.getElementById('carousel-dots');
+      if (!slides) return;
 
-          document.getElementById('timer-days').innerText = String(days).padStart(2, '0');
-          document.getElementById('timer-hours').innerText = String(hours).padStart(2, '0');
-          document.getElementById('timer-minutes').innerText = String(minutes).padStart(2, '0');
-          document.getElementById('timer-seconds').innerText = String(seconds).padStart(2, '0');
-        } else {
-          document.getElementById('timer-days').innerText = '00';
-          document.getElementById('timer-hours').innerText = '00';
-          document.getElementById('timer-minutes').innerText = '00';
-          document.getElementById('timer-seconds').innerText = '00';
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('button');
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.className = 'w-6 h-2.5 rounded-full bg-brandGold transition-all shadow-sm';
+          } else {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80 transition-all shadow-sm';
+          }
+        });
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+      resetCarouselTimer();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+      resetCarouselTimer();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+      resetCarouselTimer();
+    }
+
+    function startCarouselTimer() {
+      if (carouselTimer) clearInterval(carouselTimer);
+      carouselTimer = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }, 4000);
+    }
+
+    function resetCarouselTimer() {
+      startCarouselTimer();
+    }
+
+    function initTouchCarousel() {
+      const container = document.getElementById('wedding-carousel');
+      if (!container) return;
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+          nextSlide();
+        } else if (touchEndX - touchStartX > 50) {
+          prevSlide();
         }
-      }
+      }, { passive: true });
 
-      update();
-      setInterval(update, 1000);
-    }
-
-    // 2. 交通指引摺疊面板 (Accordion)
-    function toggleAccordion(id) {
-      const content = document.getElementById(id);
-      const icon = document.getElementById('icon-' + id);
-      
-      const isActive = content.classList.contains('active');
-
-      // 關閉其他面板
-      document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('[id^="icon-acc-"]').forEach(ic => ic.style.transform = 'rotate(0deg)');
-
-      if (!isActive) {
-        content.classList.add('active');
-        if (icon) icon.style.transform = 'rotate(180deg)';
-      }
-    }
-
-    // 3. 智能表單邏輯：出席人數 > 0 時才顯示並啟用飲食需求與兒童椅
-    function handleAttendanceChange(value) {
-      const conditionalFields = document.getElementById('smart-conditional-fields');
-      const inputs = conditionalFields.querySelectorAll('select, input');
-      const count = parseInt(value, 10);
-
-      if (!isNaN(count) && count > 0) {
-        conditionalFields.classList.remove('hidden');
-        inputs.forEach(el => el.removeAttribute('disabled'));
-      } else {
-        conditionalFields.classList.add('hidden');
-        inputs.forEach(el => el.setAttribute('disabled', 'disabled'));
-      }
-    }
-
-    // 4. 表單原生提交處理機制 (Target -> hidden_iframe)
-    function handleSubmit(event) {
-      submitted = true;
-      
-      const submitBtn = document.getElementById('submit-btn');
-      const submitBtnText = document.getElementById('submit-btn-text');
-      const submitBtnIcon = document.getElementById('submit-btn-icon');
-      
-      if (submitBtn) submitBtn.disabled = true;
-      if (submitBtnText) submitBtnText.innerText = "正在傳送回函...";
-      if (submitBtnIcon) submitBtnIcon.className = "fa-solid fa-spinner fa-spin text-xs";
-
-      // 雙重保險定時器：避免某些瀏覽器阻擋 iframe onload 觸發
-      setTimeout(() => {
-        if (submitted) {
-          onIframeLoad();
-        }
-      }, 1200);
-    }
-
-    function onIframeLoad() {
-      if (!submitted) return;
-      
-      submitted = false;
-      onFormSubmitSuccess();
-
-      const form = document.getElementById('rsvp-form');
-      if (form) form.reset();
-      handleAttendanceChange("");
-
-      const submitBtn = document.getElementById('submit-btn');
-      const submitBtnText = document.getElementById('submit-btn-text');
-      const submitBtnIcon = document.getElementById('submit-btn-icon');
-      
-      if (submitBtn) submitBtn.disabled = false;
-      if (submitBtnText) submitBtnText.innerText = "確認送出回函";
-      if (submitBtnIcon) submitBtnIcon.className = "fa-solid fa-paper-plane text-xs";
-    }
-
-    function onFormSubmitSuccess() {
-      const modal = document.getElementById('success-modal');
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        modal.querySelector('div').classList.remove('scale-95');
-      }, 10);
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('success-modal');
-      modal.classList.add('opacity-0');
-      modal.querySelector('div').classList.add('scale-95');
-      setTimeout(() => {
-        modal.classList.add('hidden');
-      }, 300);
+      // 懸停時暫停自動輪播
+      container.addEventListener('mouseenter', () => {
+        if (carouselTimer) clearInterval(carouselTimer);
+      });
+      container.addEventListener('mouseleave', () => {
+        startCarouselTimer();
+      });
     }
 
     // 初始化執行
     window.onload = function() {
       startCountdown();
+      updateCarousel();
+      startCarouselTimer();
+      initTouchCarousel();
     };
   </script>
 </body>
