@@ -1219,6 +1219,47 @@
       setTimeout(() => {
         if (submitted) {
           onIframeLoad();
+        }
+      }, 2500);
+    }
+
+    function onIframeLoad() {
+      if (!submitted) return;
+      submitted = false;
+      isSubmitting = false;
+
+      const btnText = document.getElementById('submit-btn-text');
+      const btnIcon = document.getElementById('submit-btn-icon');
+      const btn = document.getElementById('submit-btn');
+
+      if (btnText) btnText.textContent = '確認送出回函';
+      if (btnIcon) btnIcon.className = 'fa-solid fa-paper-plane text-xs';
+      if (btn) btn.disabled = false;
+
+      const form = document.getElementById('rsvp-form');
+      if (form) form.reset();
+      handleAttendanceChange(0);
+
+      const modal = document.getElementById('success-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          modal.querySelector('div').classList.remove('scale-95');
+          modal.querySelector('div').classList.add('scale-100');
+        }, 10);
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('success-modal');
+      if (!modal) return;
+      modal.classList.add('opacity-0');
+      modal.querySelector('div').classList.add('scale-95');
+      modal.querySelector('div').classList.remove('scale-100');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
     // 5. 輪播藝廊控制器 Logic (手機 GPU 3D 硬體加速 + 跟手拖曳 + 智慧防搶拍鎖定)
     let currentSlide = 0;
     const totalSlides = 6;
