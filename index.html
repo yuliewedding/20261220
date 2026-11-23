@@ -19,9 +19,11 @@
       theme: {
         extend: {
           colors: {
-            brandRed: '#7A2021',     /* 新中式絳紅 */
+            brandRed: '#8E2424',     /* 喜帖同款：復古漆器朱砂紅 */
             brandGray: '#808080',    /* 水墨灰 */
-            brandGold: '#C4A47C',    /* 琥珀古銅金 */
+            brandGold: '#D4A857',    /* 喜帖同款：復古琥珀金 */
+            paperBase: '#FDFBF7',    /* 極淡宣紙象牙白（清透不發黃） */
+            paperTint: '#F7F3EB',    /* 柔霧宣紙次背景 */
             dcQipao: '#9E2A2B',     /* Dresscode: 旗袍紅 */
             dcModern: '#6B46C1',    /* Dresscode: 摩登紫 */
             dcRetro: '#D69E2E',     /* Dresscode: 復古黃 */
@@ -32,8 +34,8 @@
             serifTc: ['Noto Serif TC', 'serif'],
           },
           boxShadow: {
-            'soft-glow': '0 10px 30px -5px rgba(184, 58, 49, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05)',
-            'card-shadow': '0 20px 40px -15px rgba(0, 0, 0, 0.08)',
+            'soft-glow': '0 10px 30px -5px rgba(142, 36, 36, 0.10), 0 4px 12px rgba(0, 0, 0, 0.04)',
+            'card-shadow': '0 20px 40px -15px rgba(0, 0, 0, 0.07)',
           }
         }
       }
@@ -43,7 +45,7 @@
   <style>
     body {
       font-family: 'Noto Serif TC', serif;
-      background-color: #FAF8F5;
+      background-color: #FDFBF7;
       color: #2C2C2C;
       overflow-x: hidden;
     }
@@ -81,12 +83,12 @@
 </head>
 <body class="antialiased selection:bg-brandRed selection:text-white">
 
-  <!-- 頂部固定毛玻璃導覽列 -->
-  <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/75 border-b border-stone-200/60 transition-all duration-300">
+  <!-- 頂部固定毛玻璃導覽列 (宣紙暖韻＋喜帖紅金印章) -->
+  <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#FBF5E6]/85 border-b border-brandGold/30 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <!-- 品牌/雙姓氏鋼印印章標誌 -->
-      <a href="#" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded-full bg-brandRed flex items-center justify-center text-white font-serifTc text-xs shadow-md group-hover:scale-105 transition-transform">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-full bg-brandRed border border-brandGold/70 flex items-center justify-center text-[#F5D6A1] font-serifTc text-xs font-bold shadow-md group-hover:scale-105 transition-transform">
           囍
         </div>
         <span class="font-serifEn text-xl font-semibold tracking-widest text-stone-800">LI &amp; YU</span>
@@ -96,7 +98,7 @@
       <div class="flex items-center space-x-6 sm:space-x-8 text-xs sm:text-sm font-medium tracking-wider">
         <a href="#about" class="text-stone-700 hover:text-brandRed transition-colors">關於我們</a>
         <a href="#details" class="text-stone-700 hover:text-brandRed transition-colors">婚禮詳情</a>
-        <a href="#rsvp" class="px-3.5 py-1.5 bg-brandRed text-white rounded-full hover:bg-red-800 transition-colors shadow-sm font-light">出席回函</a>
+        <a href="#rsvp" class="px-3.5 py-1.5 bg-brandRed text-[#FBF5E6] border border-brandGold/40 rounded-full hover:bg-red-900 transition-colors shadow-sm font-normal">出席回函</a>
       </div>
     </div>
   </nav>
@@ -135,9 +137,44 @@
 
       <!-- 婚禮主標語 -->
       <div class="my-5 flex flex-col items-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
-        <span class="inline-flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-brandRed/90 border border-[#F5D6A1]/80 font-serifTc text-lg sm:text-xl font-bold text-[#F5D6A1] mb-2.5 shadow-md">
-          囍
-        </span>
+        <!-- 喜帖同款：宣紙米白底・黑金雙層回紋圓框・朱紅圓體雙囍印章 -->
+        <div class="w-12 h-12 sm:w-14 sm:h-14 mb-2.5 drop-shadow-md">
+          <svg viewBox="0 0 120 120" class="w-full h-full" aria-label="雙囍印章">
+            <!-- 宣紙米白圓底 -->
+            <circle cx="60" cy="60" r="56" fill="#FDFBF7" />
+            <!-- 外層黑金幾何雙圈 -->
+            <circle cx="60" cy="60" r="54" fill="none" stroke="#1C1917" stroke-width="3.5" />
+            <circle cx="60" cy="60" r="50.5" fill="none" stroke="#D4A857" stroke-width="2" stroke-dasharray="6 3" />
+            <circle cx="60" cy="60" r="47.5" fill="none" stroke="#1C1917" stroke-width="2" />
+            <!-- 圓弧裁切內層的復古朱砂紅圓體雙囍 -->
+            <clipPath id="crest-inner-clip">
+              <circle cx="60" cy="60" r="44.5" />
+            </clipPath>
+            <g clip-path="url(#crest-inner-clip)" fill="#8E2424">
+              <!-- 左側「喜」 -->
+              <rect x="20" y="27" width="35" height="6.5" rx="2" />
+              <rect x="34" y="17" width="7" height="26" rx="2" />
+              <rect x="23" y="38" width="29" height="6" rx="2" />
+              <rect x="24" y="48" width="27" height="14" rx="2.5" />
+              <rect x="30" y="52.5" width="15" height="5" fill="#FDFBF7" rx="1" />
+              <rect x="19" y="67" width="37" height="6.5" rx="2" />
+              <rect x="24" y="78" width="27" height="16" rx="2.5" />
+              <rect x="30" y="83" width="15" height="6" fill="#FDFBF7" rx="1" />
+              <!-- 右側「喜」 -->
+              <rect x="65" y="27" width="35" height="6.5" rx="2" />
+              <rect x="79" y="17" width="7" height="26" rx="2" />
+              <rect x="68" y="38" width="29" height="6" rx="2" />
+              <rect x="69" y="48" width="27" height="14" rx="2.5" />
+              <rect x="75" y="52.5" width="15" height="5" fill="#FDFBF7" rx="1" />
+              <rect x="64" y="67" width="37" height="6.5" rx="2" />
+              <rect x="69" y="78" width="27" height="16" rx="2.5" />
+              <rect x="75" y="83" width="15" height="6" fill="#FDFBF7" rx="1" />
+              <!-- 中央連筆橫樑 -->
+              <rect x="52" y="38" width="16" height="5.5" />
+              <rect x="52" y="67" width="16" height="6.5" />
+            </g>
+          </svg>
+        </div>
         <p class="font-serifTc text-xl sm:text-3xl tracking-[0.2em] text-white font-medium">
           穀藏良緣・喜結豐年
         </p>
@@ -162,48 +199,56 @@
   </section>
 
   <!-- 倒數計時器視覺 (白色微光卡片與柔和陰影) -->
-  <section id="countdown" class="py-16 px-4 bg-stone-100/60 relative -mt-6 z-20 rounded-t-3xl border-t border-stone-200/50">
+  <section id="countdown" class="py-16 px-4 bg-[#F7F3EB]/70 relative -mt-6 z-20 rounded-t-3xl border-t border-brandGold/25">
     <div class="max-w-4xl mx-auto text-center">
       <p class="font-serifEn text-xs sm:text-sm uppercase tracking-widest text-brandGold font-semibold mb-2">Counting Down To Our Forever</p>
-      <h2 class="font-serifTc text-2xl sm:text-3xl text-stone-800 tracking-wider mb-10">婚禮倒數計時</h2>
+      <h2 class="font-serifTc text-2xl sm:text-3xl text-stone-800 tracking-wider mb-3">婚禮倒數計時</h2>
+      <!-- 喜帖同款圓點對稱金線 -->
+      <div class="flex items-center justify-center gap-2 mb-10">
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+        <span class="w-12 h-px bg-brandGold/70"></span>
+        <span class="text-brandRed text-xs">❖</span>
+        <span class="w-12 h-px bg-brandGold/70"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+      </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
         <!-- 天數卡片 -->
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-stone-100 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
           <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">DAYS</div>
           <span id="timer-days" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-stone-200"></span>
+            <span class="w-8 h-px bg-brandGold/40"></span>
           </div>
           <span class="font-serifTc text-xs text-stone-600 tracking-wider">天</span>
         </div>
 
         <!-- 小時卡片 -->
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-stone-100 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
           <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">HOURS</div>
           <span id="timer-hours" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-stone-200"></span>
+            <span class="w-8 h-px bg-brandGold/40"></span>
           </div>
           <span class="font-serifTc text-xs text-stone-600 tracking-wider">小時</span>
         </div>
 
         <!-- 分鐘卡片 -->
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-stone-100 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
           <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">MINUTES</div>
           <span id="timer-minutes" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-stone-200"></span>
+            <span class="w-8 h-px bg-brandGold/40"></span>
           </div>
           <span class="font-serifTc text-xs text-stone-600 tracking-wider">分鐘</span>
         </div>
 
         <!-- 秒數卡片 -->
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-stone-100 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
           <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">SECONDS</div>
           <span id="timer-seconds" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-stone-200"></span>
+            <span class="w-8 h-px bg-brandGold/40"></span>
           </div>
           <span class="font-serifTc text-xs text-stone-600 tracking-wider">秒</span>
         </div>
@@ -211,24 +256,49 @@
     </div>
   </section>
 
+  <!-- 關於我們 ‧ 囍訴 (喜帖同款雙層框線 × 垂直 V-Card 設計) -->
+  <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandRed/80 uppercase font-semibold">Our Story &amp; Invitation</span>
+      <h2 class="font-serifTc text-3xl sm:text-4xl text-stone-800 mt-1 font-normal tracking-wide">關於我們 ‧ 囍訴</h2>
+      <!-- 喜帖同款圓點金線 -->
+      <div class="flex items-center justify-center gap-3 mt-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+        <span class="w-12 sm:w-16 h-px bg-brandGold/80"></span>
+        <span class="w-6 h-6 rounded-full border border-brandRed/60 bg-brandRed/5 text-brandRed font-serifTc text-xs flex items-center justify-center">囍</span>
+        <span class="w-12 sm:w-16 h-px bg-brandGold/80"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+      </div>
+    </div>
   <!-- 關於我們 ‧ 囍訴 (垂直 V-Card 設計) -->
   <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">Our Story &amp; Invitation</span>
       <h2 class="font-serifTc text-3xl sm:text-4xl text-stone-800 mt-1 font-normal tracking-wide">關於我們 ‧ 囍訴</h2>
-      <div class="w-12 h-0.5 bg-brandRed/80 mx-auto mt-4"></div>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+        <span class="w-12 h-px bg-brandGold/70"></span>
+        <span class="text-brandRed text-xs">❖</span>
+        <span class="w-12 h-px bg-brandGold/70"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+      </div>
     </div>
 
-    <!-- 垂直 V-Card 新中式卡片區域 -->
-    <div class="bg-white rounded-3xl p-6 sm:p-12 shadow-card-shadow border border-stone-200/70 relative overflow-hidden">
-      <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-brandGold/60"></div>
-      <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-brandGold/60"></div>
-      <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-brandGold/60"></div>
-      <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-brandGold/60"></div>
+    <!-- 垂直 V-Card 新中式卡片區域（喜帖雙層紅金細框） -->
+    <div class="bg-white rounded-3xl p-6 sm:p-12 shadow-card-shadow border-2 border-brandRed/20 relative overflow-hidden">
+      <div class="absolute inset-2 rounded-2xl border border-brandGold/40 pointer-events-none"></div>
+      <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-brandGold/70"></div>
+      <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-brandGold/70"></div>
+      <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-brandGold/70"></div>
+      <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-brandGold/70"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div class="text-center mb-6 relative z-10">
+        <span class="text-[11px] tracking-[0.35em] text-stone-400 font-serifTc">百年好合 &nbsp;‧&nbsp; 永結同心</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
         <!-- 左側 V-Card 垂直感性文案 -->
-        <div class="md:col-span-5 flex flex-col items-center justify-center p-6 bg-stone-50 rounded-2xl border border-stone-200/50 relative">
+        <div class="md:col-span-5 flex flex-col items-center justify-center p-6 bg-[#FDFBF7] rounded-2xl border border-brandGold/30 relative">
           <div class="absolute top-4 right-4 w-10 h-10 border border-brandRed text-brandRed flex items-center justify-center rounded text-xs font-serifTc font-bold rotate-12 opacity-80">
             結緣
           </div>
@@ -247,21 +317,21 @@
           </div>
 
           <div class="mt-6 text-center">
-            <p class="font-serifEn text-2xl text-brandRed font-semibold tracking-wider">LI &amp; YU</p>
-            <p class="text-xs text-stone-400 font-serifTc tracking-widest mt-1">敬邀</p>
+            <p class="font-serifEn text-2xl text-brandRed font-semibold tracking-wider">VCOLE &amp; YULIE</p>
+            <p class="text-xs text-stone-400 font-serifTc tracking-widest mt-1">LI &amp; YU 敬邀</p>
           </div>
         </div>
 
         <!-- 右側 新郎新娘精緻 V-Card 名片 -->
         <div class="md:col-span-7 space-y-6">
           <div class="p-6 bg-white rounded-xl border border-stone-200/80 shadow-sm flex items-center gap-6">
-            <div class="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center text-brandRed font-serifEn text-2xl font-bold border border-brandGold/30 shrink-0">
+            <div class="w-16 h-16 rounded-full bg-[#FDFBF7] flex items-center justify-center text-brandRed font-serifEn text-xl font-bold border border-brandGold/50 shrink-0">
               LI
             </div>
             <div>
               <div class="flex items-baseline gap-2">
                 <span class="font-serifTc text-lg font-semibold text-stone-800">李維哲</span>
-                <span class="font-serifEn text-xs text-brandGold font-semibold uppercase tracking-wider">Groom</span>
+                <span class="font-serifEn text-xs text-brandGold font-bold uppercase tracking-widest">VCOLE ‧ Groom</span>
               </div>
               <p class="text-stone-500 text-sm font-serifTc mt-1 leading-relaxed">
                 「因為有妳，平凡的日子都成了值得收藏的冒險旅程。」
@@ -270,13 +340,13 @@
           </div>
 
           <div class="p-6 bg-white rounded-xl border border-stone-200/80 shadow-sm flex items-center gap-6">
-            <div class="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center text-brandRed font-serifEn text-2xl font-bold border border-brandGold/30 shrink-0">
+            <div class="w-16 h-16 rounded-full bg-[#FDFBF7] flex items-center justify-center text-brandRed font-serifEn text-xl font-bold border border-brandGold/50 shrink-0">
               YU
             </div>
             <div>
               <div class="flex items-baseline gap-2">
                 <span class="font-serifTc text-lg font-semibold text-stone-800">游加鈺</span>
-                <span class="font-serifEn text-xs text-brandGold font-semibold uppercase tracking-wider">Bride</span>
+                <span class="font-serifEn text-xs text-brandGold font-bold uppercase tracking-widest">YULIE ‧ Bride</span>
               </div>
               <p class="text-stone-500 text-sm font-serifTc mt-1 leading-relaxed">
                 「最好的愛，是攜手看遍風景後，依然認定彼此是唯一的歸宿。」
@@ -348,12 +418,18 @@
   </section>
 
   <!-- 婚禮詳情與著裝指南 (Dress Code) -->
-  <section id="details" class="py-20 px-4 bg-stone-100/50">
+  <section id="details" class="py-20 px-4 bg-[#F7F3EB]/65">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
         <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">Time &amp; Dress Code</span>
         <h2 class="font-serifTc text-3xl sm:text-4xl text-stone-800 mt-1 font-normal tracking-wide">婚禮詳情 ‧ 著裝指南</h2>
-        <div class="w-12 h-0.5 bg-brandRed/80 mx-auto mt-4"></div>
+        <div class="flex items-center justify-center gap-2 mt-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+          <span class="w-12 h-px bg-brandGold/70"></span>
+          <span class="text-brandRed text-xs">❖</span>
+          <span class="w-12 h-px bg-brandGold/70"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -368,87 +444,87 @@
 
             <div class="space-y-6 text-stone-700">
               <div class="flex items-start gap-4">
-                <div class="w-8 h-8 rounded-full bg-stone-100 text-brandGold flex items-center justify-center shrink-0 mt-0.5">
+                <div class="w-8 h-8 rounded-full bg-[#FDFBF7] border border-brandGold/30 text-brandGold flex items-center justify-center shrink-0 mt-0.5">
                   <i class="fa-solid fa-clock text-sm"></i>
                 </div>
                 <div>
                   <h4 class="font-serifTc font-semibold text-stone-800">婚禮日期 &amp; 時間</h4>
                   <p class="text-sm text-stone-600 mt-1"><span class="whitespace-nowrap">2026年12月20日 星期日</span></p>
-                  <p class="text-sm font-semibold text-brandRed mt-0.5"><span class="whitespace-nowrap">午宴 12:00 準時開桌</span> (11:30 入席)</p>
+                  <p class="text-sm font-semibold text-brandRed mt-0.5"><span class="whitespace-nowrap">午宴 12:00 入席</span> ／ <span class="whitespace-nowrap">12:30 準時開席</span></p>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-8 h-8 rounded-full bg-stone-100 text-brandGold flex items-center justify-center shrink-0 mt-0.5">
+                <div class="w-8 h-8 rounded-full bg-[#FDFBF7] border border-brandGold/30 text-brandGold flex items-center justify-center shrink-0 mt-0.5">
                   <i class="fa-solid fa-location-dot text-sm"></i>
                 </div>
                 <div>
                   <h4 class="font-serifTc font-semibold text-stone-800">宴席地點</h4>
                   <p class="text-sm text-stone-700 font-medium mt-1"><span class="whitespace-nowrap">福興穀倉</span></p>
-                  <p class="text-xs text-stone-500 mt-0.5"><span class="whitespace-nowrap">506彰化縣福興鄉橋頭村復興路28號</span></p>
+                  <p class="text-xs text-stone-500 mt-0.5"><span class="whitespace-nowrap">506彰化縣福興鄉福興村復興路28號</span></p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="mt-8 pt-4 border-t border-stone-100 text-xs text-stone-400 font-serifTc">
-            * 貼心提醒：婚禮當日建議提早15-20分鐘到場交流合照。
+          <div class="mt-8 pt-4 border-t border-brandGold/20 text-xs text-stone-500 font-serifTc">
+            * 貼心提醒：12:00 開放賓客入席交流合照，12:30 午宴準時開席。
           </div>
         </div>
 
         <!-- 右卡片：Dress Code 色卡建議 + AI 穿搭管家 -->
-        <div class="bg-white rounded-3xl p-8 shadow-card-shadow border border-stone-200/80 flex flex-col justify-between">
+        <div class="bg-white/95 rounded-3xl p-8 shadow-card-shadow border border-brandGold/35 flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-3 text-brandRed font-serifTc font-semibold text-lg mb-4 border-b border-stone-100 pb-3">
+            <div class="flex items-center gap-3 text-brandRed font-serifTc font-semibold text-lg mb-4 border-b border-brandGold/25 pb-3">
               <i class="fa-solid fa-vest-patches text-xl"></i>
               <span>着裝建議 Dress Code</span>
             </div>
 
-            <p class="text-xs text-stone-500 font-serifTc mb-6 leading-relaxed">
+            <p class="text-xs text-stone-600 font-serifTc mb-6 leading-relaxed">
               為配合我們特別規劃的新中式復古盛會，誠摯邀請您以以下風格元素或色系出席，共赴這場摩登復古美宴：
             </p>
 
             <div class="grid grid-cols-2 gap-4">
               <!-- 旗袍 (#9E2A2B) -->
-              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
+              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
                 <div class="w-10 h-10 rounded-xl bg-[#9E2A2B] shadow-sm shrink-0 border border-white"></div>
                 <div>
-                  <p class="text-xs font-bold text-stone-800">旗袍風韻</p>
-                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#9E2A2B</p>
+                  <p class="text-xs font-bold text-stone-800">旗袍</p>
+                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#9E2A2B</p>
                 </div>
               </div>
 
               <!-- 摩登 (#6B46C1) -->
-              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
+              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
                 <div class="w-10 h-10 rounded-xl bg-[#6B46C1] shadow-sm shrink-0 border border-white"></div>
                 <div>
-                  <p class="text-xs font-bold text-stone-800">摩登紫調</p>
-                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#6B46C1</p>
+                  <p class="text-xs font-bold text-stone-800">摩登</p>
+                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#6B46C1</p>
                 </div>
               </div>
 
               <!-- 復古 (#D69E2E) -->
-              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
+              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
                 <div class="w-10 h-10 rounded-xl bg-[#D69E2E] shadow-sm shrink-0 border border-white"></div>
                 <div>
-                  <p class="text-xs font-bold text-stone-800">復古暖金</p>
-                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#D69E2E</p>
+                  <p class="text-xs font-bold text-stone-800">復古</p>
+                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#D69E2E</p>
                 </div>
               </div>
 
               <!-- 老上海 (#FEEBC8) -->
-              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#FEEBC8] shadow-sm shrink-0 border border-stone-300"></div>
+              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#FEEBC8] shadow-sm shrink-0 border border-brandGold/50"></div>
                 <div>
-                  <p class="text-xs font-bold text-stone-800">老上海米黃</p>
-                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#FEEBC8</p>
+                  <p class="text-xs font-bold text-stone-800">老上海</p>
+                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#FEEBC8</p>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- ✨ Gemini 智能穿搭靈感顧問 -->
-          <div class="mt-6 pt-5 border-t border-stone-100">
+          <div class="mt-6 pt-5 border-t border-brandGold/20">
             <div class="flex items-center justify-between mb-2">
               <span class="text-xs font-semibold text-stone-800 font-serifTc flex items-center gap-1.5">
                 <i class="fa-solid fa-wand-magic-sparkles text-brandGold"></i>
@@ -459,8 +535,8 @@
                 <i class="fa-solid fa-arrow-right text-[10px]"></i>
               </button>
             </div>
-            <div class="p-2.5 bg-brandGold/10 rounded-xl text-center">
-              <p class="text-[11px] text-stone-600 font-serifTc">推薦元素：新中式盤扣、唐裝、旗袍、復古西裝外套</p>
+            <div class="p-2.5 bg-brandGold/15 rounded-xl text-center">
+              <p class="text-[11px] text-stone-700 font-serifTc">推薦元素：新中式盤扣、唐裝、旗袍、復古西裝外套</p>
             </div>
           </div>
         </div>
@@ -474,7 +550,13 @@
     <div class="text-center mb-16">
       <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">Location &amp; Transportation</span>
       <h2 class="font-serifTc text-3xl sm:text-4xl text-stone-800 mt-1 font-normal tracking-wide">交通指引 ‧ 地圖導覽</h2>
-      <div class="w-12 h-0.5 bg-brandRed/80 mx-auto mt-4"></div>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+        <span class="w-12 h-px bg-brandGold/70"></span>
+        <span class="text-brandRed text-xs">❖</span>
+        <span class="w-12 h-px bg-brandGold/70"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
+      </div>
     </div>
 
     <div class="space-y-4 max-w-4xl mx-auto">
@@ -488,25 +570,25 @@
           </div>
           <i id="icon-acc-rail" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300 rotate-180"></i>
         </button>
-        <div id="acc-rail" class="accordion-content active px-6 border-t border-stone-100 bg-stone-50/50">
+        <div id="acc-rail" class="accordion-content active px-6 border-t border-stone-100 bg-[#FDFBF7]/80">
           <div class="py-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <!-- 左邊地圖模式 -->
             <div class="space-y-2">
               <div class="rounded-xl overflow-hidden shadow-sm border border-stone-200 h-56 relative bg-stone-200">
-                <iframe class="w-full h-full border-0" title="506彰化縣福興鄉橋頭村復興路28號 Google 地圖" src="https://maps.google.com/maps?q=506%E5%BD%B0%E5%8C%96%E7%B8%A3%E7%A6%8F%E8%88%88%E9%84%89%E6%A9%8B%E9%A0%AD%E6%9D%91%E5%BE%A9%E8%88%88%E8%B7%AF28%E8%99%9F&hl=zh-TW&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="w-full h-full border-0" title="506彰化縣福興鄉福興村復興路28號 Google 地圖" src="https://maps.google.com/maps?q=506%E5%BD%B0%E5%8C%96%E7%B8%A3%E7%A6%8F%E8%88%88%E9%84%89%E7%A6%8F%E8%88%88%E6%9D%91%E5%BE%A9%E8%88%88%E8%B7%AF28%E8%99%9F&hl=zh-TW&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              <a href="https://www.google.com/maps/search/?api=1&query=506%E5%BD%B0%E5%8C%96%E7%B8%A3%E7%A6%8F%E8%88%88%E9%84%89%E6%A9%8B%E9%A0%AD%E6%9D%91%E5%BE%A9%E8%88%88%E8%B7%AF28%E8%99%9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brandRed hover:text-red-800 font-serifTc font-medium transition-colors">
+              <a href="https://www.google.com/maps/search/?api=1&query=506%E5%BD%B0%E5%8C%96%E7%B8%A3%E7%A6%8F%E8%88%88%E9%84%89%E7%A6%8F%E8%88%88%E6%9D%91%E5%BE%A9%E8%88%88%E8%B7%AF28%E8%99%9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brandRed hover:text-red-800 font-serifTc font-medium transition-colors">
                 <i class="fa-solid fa-diamond-turn-right"></i>
-                <span>開啟 Google 地圖導航（<span class="whitespace-nowrap">506彰化縣福興鄉橋頭村復興路28號</span>）</span>
+                <span>開啟 Google 地圖導航（<span class="whitespace-nowrap">506彰化縣福興鄉福興村復興路28號</span>）</span>
               </a>
             </div>
             <!-- 右邊轉乘指引說明 -->
             <div class="space-y-3 text-xs sm:text-sm text-stone-700 font-serifTc">
-              <div class="p-3 bg-white rounded-lg border border-stone-200/60">
+              <div class="p-3 bg-white rounded-lg border border-brandGold/25">
                 <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">高鐵台中站</span> / <span class="whitespace-nowrap">台鐵彰化站</span></p>
                 <p class="text-stone-600 leading-relaxed">抵達後可轉乘台灣好行鹿港祈福線或彰化客運，於<span class="whitespace-nowrap">福興穀倉站</span>或<span class="whitespace-nowrap">鹿港乘車處</span>下車步行約3分鐘抵達。</p>
               </div>
-              <div class="p-3 bg-white rounded-lg border border-stone-200/60">
+              <div class="p-3 bg-white rounded-lg border border-brandGold/25">
                 <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">計程車與專車接駁</span></p>
                 <p class="text-stone-600 leading-relaxed">由<span class="whitespace-nowrap">高鐵台中站</span>搭乘計程車約25-30分鐘即可直達會場。</p>
               </div>
@@ -516,15 +598,15 @@
       </div>
 
       <!-- 面板 2: 自行開車與停車 -->
-      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
-        <button type="button" onclick="toggleAccordion('acc-parking')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
+      <div class="bg-white/95 rounded-2xl border border-brandGold/35 overflow-hidden shadow-sm">
+        <button type="button" onclick="toggleAccordion('acc-parking')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-[#FBF5E6]/50 transition-colors">
           <div class="flex items-center gap-3 font-serifTc font-semibold text-stone-800">
             <i class="fa-solid fa-square-parking text-brandRed"></i>
             <span>自行開車與代客停車 Parking Guide</span>
           </div>
           <i id="icon-acc-parking" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300"></i>
         </button>
-        <div id="acc-parking" class="accordion-content px-6 border-t border-stone-100 bg-stone-50/50">
+        <div id="acc-parking" class="accordion-content px-6 border-t border-brandGold/20 bg-[#FBF5E6]/40">
           <div class="py-6 space-y-3 text-xs sm:text-sm text-stone-700 font-serifTc">
             <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>國道一號由<span class="whitespace-nowrap">彰化交流道</span>下，接台19線彰鹿路往鹿港/福興方向直行即可抵達。</p>
             <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>園區旁設有專屬賓客停車場及周邊公有收費停車場，停車便利。</p>
@@ -533,15 +615,15 @@
       </div>
 
       <!-- 面板 3: 公車客運路線 -->
-      <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
-        <button type="button" onclick="toggleAccordion('acc-bus')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
+      <div class="bg-white/95 rounded-2xl border border-brandGold/35 overflow-hidden shadow-sm">
+        <button type="button" onclick="toggleAccordion('acc-bus')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-[#FBF5E6]/50 transition-colors">
           <div class="flex items-center gap-3 font-serifTc font-semibold text-stone-800">
             <i class="fa-solid fa-bus text-brandRed"></i>
             <span>公車客運路線 Bus Routes</span>
           </div>
           <i id="icon-acc-bus" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300"></i>
         </button>
-        <div id="acc-bus" class="accordion-content px-6 border-t border-stone-100 bg-stone-50/50">
+        <div id="acc-bus" class="accordion-content px-6 border-t border-brandGold/20 bg-[#FBF5E6]/40">
           <div class="py-6 text-xs sm:text-sm text-stone-700 font-serifTc leading-relaxed">
             搭乘彰化客運至<span class="whitespace-nowrap">福興穀倉站</span>或<span class="whitespace-nowrap">鹿港總站</span>下車，步行約3分鐘即可到達。<span class="whitespace-nowrap">可搭乘路線：6900, 6934, 6936</span>。
           </div>
@@ -552,20 +634,24 @@
   </section>
 
   <!-- 出席回函 RSVP (隱藏式 Iframe 提交技術) -->
-  <section id="rsvp" class="py-20 px-4 bg-stone-900 text-white relative">
+  <section id="rsvp" class="py-20 px-4 bg-[#261111] text-white relative">
     <div class="max-w-3xl mx-auto">
       
       <div class="text-center mb-12">
-        <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">RSVP Confirmation</span>
+        <!-- 喜帖同款紅金雙囍小圓徽 -->
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-brandRed border-2 border-brandGold/80 text-brandGold font-serifTc font-bold text-lg shadow-lg mb-3">
+          囍
+        </div>
+        <span class="block font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">RSVP Confirmation</span>
         <h2 class="font-serifTc text-3xl sm:text-4xl text-white mt-1 font-normal tracking-wide">出席回函 ‧ 誠摯邀約</h2>
         <div class="w-12 h-0.5 bg-brandGold mx-auto mt-4"></div>
-        <p class="text-xs text-stone-400 font-serifTc mt-3">請於 2026年9月30日前 填寫回函，以便我們妥善安排席位</p>
+        <p class="text-xs text-stone-300 font-serifTc mt-3">請於 2026年9月30日前 填寫回函，以便我們妥善安排席位</p>
       </div>
 
       <!-- 隱藏式 Iframe 提交目標 -->
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted !== 'undefined' && submitted) onIframeLoad()"></iframe>
 
-      <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLScqL0SiEtfhagig_SG0Q5JRSr7jFSasqFS8uEp1Jg_DJovsYQ/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)" class="bg-stone-800/80 rounded-3xl p-6 sm:p-10 border border-brandGold/30 shadow-2xl backdrop-blur-md space-y-6">
+      <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLScqL0SiEtfhagig_SG0Q5JRSr7jFSasqFS8uEp1Jg_DJovsYQ/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)" class="bg-[#2F1A1A]/90 rounded-3xl p-6 sm:p-10 border border-brandGold/45 shadow-2xl backdrop-blur-md space-y-6">
         
         <!-- 姓名 NAME -->
         <div>
@@ -662,7 +748,7 @@
         </div>
 
         <!-- 送出按鈕 -->
-        <button type="submit" id="submit-btn" class="w-full py-4 bg-brandRed hover:bg-red-800 text-white font-serifTc font-semibold rounded-xl shadow-lg hover:shadow-red-900/50 transition-all duration-300 tracking-wider flex items-center justify-center gap-2">
+        <button type="submit" id="submit-btn" class="w-full py-4 bg-brandRed hover:bg-red-800 text-[#FBF5E6] border border-brandGold/50 font-serifTc font-semibold rounded-xl shadow-lg hover:shadow-red-900/50 transition-all duration-300 tracking-wider flex items-center justify-center gap-2">
           <span id="submit-btn-text">確認送出回函</span>
           <i id="submit-btn-icon" class="fa-solid fa-paper-plane text-xs"></i>
         </button>
@@ -672,9 +758,9 @@
   </section>
 
   <!-- 頁尾 Footer -->
-  <footer class="py-8 bg-stone-950 text-center text-stone-500 font-serifEn text-xs tracking-widest border-t border-stone-800">
-    <p>LI &amp; YU WEDDING INVITATION &copy; 2026 . ALL RIGHTS RESERVED.</p>
-    <p class="font-serifTc text-[11px] text-stone-600 mt-1">策劃製作：極致新中式美學團隊</p>
+  <footer class="py-8 bg-[#180A0A] text-center text-stone-400 font-serifEn text-xs tracking-widest border-t border-brandGold/20">
+    <p>LI (VCOLE) &amp; YU (YULIE) WEDDING INVITATION &copy; 2026 . ALL RIGHTS RESERVED.</p>
+    <p class="font-serifTc text-[11px] text-stone-500 mt-1">喜結良緣 ‧ 佳偶天成</p>
   </footer>
 
   <!-- 送出成功提示 Modal -->
