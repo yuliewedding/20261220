@@ -124,11 +124,12 @@
       </picture>
       <div class="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/60 via-40% to-transparent md:bg-gradient-to-t md:from-stone-950/90 md:via-stone-950/45 md:to-stone-900/25"></div>
     </div>
-    <!-- 封面文字內容 (手機版收攏於最下方深色石牆區，完全不遮擋新人臉部) -->
+
+    <!-- 封面文字內容 -->
     <div class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center pt-20 pb-8 md:py-20 md:pr-[24%]">
       <p class="font-serifEn text-sm sm:text-xl font-bold text-[#F5D6A1] tracking-[0.22em] mb-2 md:mb-3 uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Wedding Invitation</p>
       
-      <!-- 婚禮主題專屬 LOGO (鎖定精巧高度，避免撐開版面) -->
+      <!-- 婚禮主題專屬 LOGO -->
       <div class="my-1.5 md:my-3 flex items-center justify-center">
         <img
           src="https://i.postimg.cc/8CTgmTgD/ly-03.png"
@@ -141,46 +142,58 @@
 
       <div class="w-12 md:w-14 h-px bg-[#F5D6A1]/90 my-2 md:my-3"></div>
 
-      <!-- 婚禮主標語：將雙囍圓印章嵌入「穀藏良緣」與「喜結豐年」正中央 -->
+      <!-- 婚禮主標語：將喜帖同款朱紅金囍宮廷燈籠嵌入「穀藏良緣」與「喜結豐年」正中央 -->
       <div class="my-2 md:my-4 flex items-center justify-center gap-2.5 sm:gap-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
         <span class="font-serifTc text-lg sm:text-3xl tracking-[0.2em] text-white font-medium">穀藏良緣</span>
         
-        <!-- 喜帖同款：宣紙米白底・黑金雙層回紋圓框・朱紅圓體雙囍印章 -->
-        <span class="inline-flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 shrink-0 drop-shadow-md">
-          <svg viewBox="0 0 120 120" class="w-full h-full" aria-label="雙囍印章">
-            <!-- 宣紙米白圓底 -->
-            <circle cx="60" cy="60" r="56" fill="#FDFBF7" />
-            <!-- 外層黑金幾何雙圈 -->
-            <circle cx="60" cy="60" r="54" fill="none" stroke="#1C1917" stroke-width="3.5" />
-            <circle cx="60" cy="60" r="50.5" fill="none" stroke="#D4A857" stroke-width="2" stroke-dasharray="6 3" />
-            <circle cx="60" cy="60" r="47.5" fill="none" stroke="#1C1917" stroke-width="2" />
-            <!-- 圓弧裁切內層的復古朱砂紅圓體雙囍 -->
-            <clipPath id="crest-inner-clip">
-              <circle cx="60" cy="60" r="44.5" />
-            </clipPath>
-            <g clip-path="url(#crest-inner-clip)" fill="#8E2424">
-              <!-- 左側「喜」 -->
-              <rect x="20" y="27" width="35" height="6.5" rx="2" />
-              <rect x="34" y="17" width="7" height="26" rx="2" />
-              <rect x="23" y="38" width="29" height="6" rx="2" />
-              <rect x="24" y="48" width="27" height="14" rx="2.5" />
-              <rect x="30" y="52.5" width="15" height="5" fill="#FDFBF7" rx="1" />
-              <rect x="19" y="67" width="37" height="6.5" rx="2" />
-              <rect x="24" y="78" width="27" height="16" rx="2.5" />
-              <rect x="30" y="83" width="15" height="6" fill="#FDFBF7" rx="1" />
-              <!-- 右側「喜」 -->
-              <rect x="65" y="27" width="35" height="6.5" rx="2" />
-              <rect x="79" y="17" width="7" height="26" rx="2" />
-              <rect x="68" y="38" width="29" height="6" rx="2" />
-              <rect x="69" y="48" width="27" height="14" rx="2.5" />
-              <rect x="75" y="52.5" width="15" height="5" fill="#FDFBF7" rx="1" />
-              <rect x="64" y="67" width="37" height="6.5" rx="2" />
-              <rect x="69" y="78" width="27" height="16" rx="2.5" />
-              <rect x="75" y="83" width="15" height="6" fill="#FDFBF7" rx="1" />
-              <!-- 中央連筆橫樑 -->
-              <rect x="52" y="38" width="16" height="5.5" />
-              <rect x="52" y="67" width="16" height="6.5" />
+        <!-- 喜帖同款：復古朱砂紅宮廷燈籠 × 琥珀金幾何雙囍 × 流蘇穗 -->
+        <span class="inline-flex items-center justify-center w-9 h-12 sm:w-12 sm:h-16 shrink-0 drop-shadow-[0_4px_10px_rgba(0,0,0,0.75)]">
+          <svg viewBox="0 0 120 165" class="w-full h-full" aria-label="朱紅金囍燈籠">
+            <rect x="52" y="2" width="16" height="10" rx="2" fill="none" stroke="#E5B962" stroke-width="3" />
+            <line x1="60" y1="12" x2="60" y2="18" stroke="#E5B962" stroke-width="3" />
+            <rect x="42" y="17" width="36" height="9" rx="2" fill="#8E2424" stroke="#E5B962" stroke-width="2" />
+            <g stroke="#E5B962" stroke-width="1.3" opacity="0.85">
+              <line x1="48" y1="18" x2="48" y2="25" />
+              <line x1="54" y1="18" x2="54" y2="25" />
+              <line x1="60" y1="18" x2="60" y2="25" />
+              <line x1="66" y1="18" x2="66" y2="25" />
+              <line x1="72" y1="18" x2="72" y2="25" />
             </g>
+            <ellipse cx="60" cy="68" rx="48" ry="43" fill="#8E2424" stroke="#3D0C0C" stroke-width="2.5" />
+            <ellipse cx="60" cy="68" rx="36" ry="42" fill="none" stroke="#E5B962" stroke-width="1.8" opacity="0.9" />
+            <ellipse cx="60" cy="68" rx="22" ry="42.5" fill="none" stroke="#E5B962" stroke-width="1.3" opacity="0.55" />
+            <g fill="#F0C76E">
+              <rect x="33" y="45" width="23" height="5" rx="0.8" />
+              <rect x="42" y="38" width="5.5" height="18" rx="0.8" />
+              <rect x="35" y="53" width="19" height="4.5" rx="0.8" />
+              <rect x="36" y="61" width="17" height="10.5" rx="1" />
+              <rect x="40.5" y="64" width="8" height="4.5" fill="#8E2424" />
+              <rect x="32" y="75" width="25" height="5" rx="0.8" />
+              <rect x="36" y="83" width="17" height="11.5" rx="1" />
+              <rect x="40.5" y="86.5" width="8" height="4.5" fill="#8E2424" />
+              <rect x="64" y="45" width="23" height="5" rx="0.8" />
+              <rect x="72.5" y="38" width="5.5" height="18" rx="0.8" />
+              <rect x="66" y="53" width="19" height="4.5" rx="0.8" />
+              <rect x="67" y="61" width="17" height="10.5" rx="1" />
+              <rect x="71.5" y="64" width="8" height="4.5" fill="#8E2424" />
+              <rect x="63" y="75" width="25" height="5" rx="0.8" />
+              <rect x="67" y="83" width="17" height="11.5" rx="1" />
+              <rect x="71.5" y="86.5" width="8" height="4.5" fill="#8E2424" />
+              <rect x="55" y="53" width="10" height="4.5" />
+              <rect x="55" y="75" width="10" height="5" />
+            </g>
+            <rect x="41" y="109" width="38" height="6" rx="2.5" fill="#D4A857" stroke="#3D0C0C" stroke-width="1.5" />
+            <rect x="44" y="115" width="32" height="10" rx="1.5" fill="#8E2424" stroke="#3D0C0C" stroke-width="1.5" />
+            <g stroke="#E5B962" stroke-width="1.3">
+              <line x1="49" y1="116" x2="49" y2="124" />
+              <line x1="54.5" y1="116" x2="54.5" y2="124" />
+              <line x1="60" y1="116" x2="60" y2="124" />
+              <line x1="65.5" y1="116" x2="65.5" y2="124" />
+              <line x1="71" y1="116" x2="71" y2="124" />
+            </g>
+            <circle cx="60" cy="129" r="3.5" fill="#F0C76E" stroke="#3D0C0C" stroke-width="1.2" />
+            <rect x="57" y="132" width="6" height="27" rx="2" fill="#8E2424" stroke="#3D0C0C" stroke-width="1.5" />
+            <line x1="60" y1="133" x2="60" y2="158" stroke="#C83E3E" stroke-width="1" />
           </svg>
         </span>
 
