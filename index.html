@@ -407,7 +407,7 @@
       </div>
     </div>
 
-    <!-- 精選婚紗藝廊（電腦版：左邊小巧縮圖網格 ＋ 右側大圖 ／ 手機版：上方大圖 ＋ 下方 4×2 縮圖列） -->
+    <!-- 精選婚紗藝廊（電腦版：左邊小巧縮圖網格 ＋ 右側大圖 ／ 手機版：上方大圖 ＋ 下方 5×2 縮圖列，10張全收錄） -->
     <div class="mt-14 max-w-4xl mx-auto select-none" id="wedding-gallery">
       <div class="text-center mb-6">
         <p class="font-serifEn text-xs tracking-[0.25em] text-brandGold uppercase font-semibold">Wedding Lookbook</p>
@@ -416,9 +416,9 @@
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-7 items-center">
         
-        <!-- 縮圖預覽區：電腦版位於左側（小巧精緻 2×4 網格），手機版位於下方（order-2，4×2 整齊縮圖列） -->
+        <!-- 縮圖預覽區：電腦版位於左側（小巧精緻 2×5 網格），手機版位於下方（order-2，5×2 整齊縮圖列） -->
         <div class="order-2 md:order-1 md:col-span-3 flex flex-col items-center">
-          <div id="gallery-thumbs" class="grid grid-cols-4 md:grid-cols-2 gap-1.5 sm:gap-2 w-full max-w-[260px] md:max-w-[165px]">
+          <div id="gallery-thumbs" class="grid grid-cols-5 md:grid-cols-2 gap-1.5 sm:gap-2 w-full max-w-[290px] md:max-w-[160px]">
             <!-- Thumb 0 -->
             <button type="button" onclick="selectGalleryPhoto(0)" aria-label="預覽照片 1" class="gallery-thumb active relative aspect-[1045/1567] rounded-lg overflow-hidden border-2 border-brandGold ring-2 ring-brandGold/30 shadow-sm transition-all duration-300 opacity-100 hover:opacity-100">
               <img src="https://i.postimg.cc/SNDzLxMr/IMG-1702.jpg" referrerpolicy="no-referrer" decoding="async" alt="縮圖 1" class="w-full h-full object-cover object-center" />
@@ -451,8 +451,16 @@
             <button type="button" onclick="selectGalleryPhoto(7)" aria-label="預覽照片 8" class="gallery-thumb relative aspect-[1045/1567] rounded-lg overflow-hidden border-2 border-transparent opacity-60 hover:opacity-95 transition-all duration-300">
               <img src="https://i.postimg.cc/qBGGY0KT/IMG-6869.jpg" referrerpolicy="no-referrer" decoding="async" alt="縮圖 8" class="w-full h-full object-cover object-center" />
             </button>
+            <!-- Thumb 8 -->
+            <button type="button" onclick="selectGalleryPhoto(8)" aria-label="預覽照片 9" class="gallery-thumb relative aspect-[1045/1567] rounded-lg overflow-hidden border-2 border-transparent opacity-60 hover:opacity-95 transition-all duration-300">
+              <img src="https://i.postimg.cc/7PNNcDzy/IMG-9035.jpg" referrerpolicy="no-referrer" decoding="async" alt="縮圖 9" class="w-full h-full object-cover object-center" />
+            </button>
+            <!-- Thumb 9 -->
+            <button type="button" onclick="selectGalleryPhoto(9)" aria-label="預覽照片 10" class="gallery-thumb relative aspect-[1045/1567] rounded-lg overflow-hidden border-2 border-transparent opacity-60 hover:opacity-95 transition-all duration-300">
+              <img src="https://i.postimg.cc/zDkkM5gM/S-451141637-0.jpg" referrerpolicy="no-referrer" decoding="async" alt="縮圖 10" class="w-full h-full object-cover object-center" />
+            </button>
           </div>
-          <p id="gallery-counter" class="font-serifEn text-xs text-stone-400 tracking-widest mt-3">01 / 08</p>
+          <p id="gallery-counter" class="font-serifEn text-xs text-stone-400 tracking-widest mt-3">01 / 10</p>
         </div>
 
         <!-- 主大圖展示區：電腦版位於右側（9欄寬幅），手機版位於上方（order-1） -->
@@ -522,7 +530,7 @@
                 <div>
                   <h4 class="font-serifTc text-base sm:text-lg font-semibold text-stone-800">婚禮日期 &amp; 時間</h4>
                   <p class="text-base sm:text-lg text-stone-700 mt-1"><span class="whitespace-nowrap">2026年12月20日 星期日</span></p>
-                  <p class="text-base sm:text-lg font-semibold text-brandRed mt-1"><span class="whitespace-nowrap">午宴 12:00 入席</span> ／ <span class="whitespace-nowrap">12:30 準時開席</span></p>
+                  <p class="text-base sm:text-lg font-semibold text-brandRed mt-1"><span class="whitespace-nowrap">午宴 12:00 準時開始</span></p>
                 </div>
               </div>
 
@@ -1192,7 +1200,7 @@
       setTimeout(() => modal.classList.add('hidden'), 300);
     }
 
-    // 5. 精品婚紗畫廊控制器 (點選小縮圖淡入切換大圖，零滑動卡頓)
+    // 5. 精品婚紗畫廊控制器 (10張全收錄，點選小縮圖淡入切換大圖，零滑動卡頓)
     const galleryPhotos = [
       {
         src: 'https://i.postimg.cc/SNDzLxMr/IMG-1702.jpg',
@@ -1233,6 +1241,16 @@
         src: 'https://i.postimg.cc/qBGGY0KT/IMG-6869.jpg',
         en: 'Pure Happiness',
         zh: '攜手同行 ‧ 幸福常伴'
+      },
+      {
+        src: 'https://i.postimg.cc/7PNNcDzy/IMG-9035.jpg',
+        en: 'Tender Gaze',
+        zh: '眼底星河 ‧ 滿心是你'
+      },
+      {
+        src: 'https://i.postimg.cc/zDkkM5gM/S-451141637-0.jpg',
+        en: 'Endless Devotion',
+        zh: '歲月長河 ‧ 唯愛永恆'
       }
     ];
 
