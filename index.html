@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=LXGW+WenKai+TC:wght@400;700&family=Noto+Serif+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -32,6 +32,7 @@
           fontFamily: {
             serifEn: ['Cormorant Garamond', 'serif'],
             serifTc: ['Noto Serif TC', 'serif'],
+            serifKai: ['DFKai-SB', 'BiauKai', 'Kaiti TC', 'LXGW WenKai TC', 'Noto Serif TC', 'serif'],
           },
           boxShadow: {
             'soft-glow': '0 10px 30px -5px rgba(142, 36, 36, 0.10), 0 4px 12px rgba(0, 0, 0, 0.04)',
@@ -201,7 +202,7 @@
   <!-- 倒數計時器視覺 (白色微光卡片與柔和陰影) -->
   <section id="countdown" class="py-16 px-4 bg-[#F7F3EB]/70 relative -mt-6 z-20 rounded-t-3xl border-t border-brandGold/25">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="font-serifEn text-xs sm:text-sm uppercase tracking-widest text-brandGold font-semibold mb-2">Counting Down To Our Forever</p>
+      <p class="font-serifEn text-sm sm:text-base uppercase tracking-[0.2em] text-brandGold font-semibold mb-2">Counting Down To Our Forever</p>
       <h2 class="font-serifTc text-2xl sm:text-3xl text-stone-800 tracking-wider mb-3">婚禮倒數計時</h2>
       <!-- 喜帖同款圓點對稱金線 -->
       <div class="flex items-center justify-center gap-2 mb-10">
@@ -212,45 +213,45 @@
         <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
         <!-- 天數卡片 -->
-        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
-          <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">DAYS</div>
-          <span id="timer-days" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-8 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+          <div class="text-stone-400 font-serifEn text-xs sm:text-sm tracking-widest mb-1">DAYS</div>
+          <span id="timer-days" class="font-serifEn text-5xl sm:text-6xl font-bold text-brandRed my-2">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-brandGold/40"></span>
+            <span class="w-10 h-px bg-brandGold/40"></span>
           </div>
-          <span class="font-serifTc text-xs text-stone-600 tracking-wider">天</span>
+          <span class="font-serifTc text-xs sm:text-sm text-stone-600 tracking-wider">天</span>
         </div>
 
         <!-- 小時卡片 -->
-        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
-          <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">HOURS</div>
-          <span id="timer-hours" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-8 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+          <div class="text-stone-400 font-serifEn text-xs sm:text-sm tracking-widest mb-1">HOURS</div>
+          <span id="timer-hours" class="font-serifEn text-5xl sm:text-6xl font-bold text-brandRed my-2">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-brandGold/40"></span>
+            <span class="w-10 h-px bg-brandGold/40"></span>
           </div>
-          <span class="font-serifTc text-xs text-stone-600 tracking-wider">小時</span>
+          <span class="font-serifTc text-xs sm:text-sm text-stone-600 tracking-wider">小時</span>
         </div>
 
         <!-- 分鐘卡片 -->
-        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
-          <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">MINUTES</div>
-          <span id="timer-minutes" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-8 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+          <div class="text-stone-400 font-serifEn text-xs sm:text-sm tracking-widest mb-1">MINUTES</div>
+          <span id="timer-minutes" class="font-serifEn text-5xl sm:text-6xl font-bold text-brandRed my-2">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-brandGold/40"></span>
+            <span class="w-10 h-px bg-brandGold/40"></span>
           </div>
-          <span class="font-serifTc text-xs text-stone-600 tracking-wider">分鐘</span>
+          <span class="font-serifTc text-xs sm:text-sm text-stone-600 tracking-wider">分鐘</span>
         </div>
 
         <!-- 秒數卡片 -->
-        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
-          <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">SECONDS</div>
-          <span id="timer-seconds" class="font-serifEn text-4xl sm:text-5xl font-bold text-brandRed my-1">00</span>
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-8 shadow-soft-glow border border-brandGold/25 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
+          <div class="text-stone-400 font-serifEn text-xs sm:text-sm tracking-widest mb-1">SECONDS</div>
+          <span id="timer-seconds" class="font-serifEn text-5xl sm:text-6xl font-bold text-brandRed my-2">00</span>
           <div class="w-full my-2 flex items-center justify-center">
-            <span class="w-8 h-px bg-brandGold/40"></span>
+            <span class="w-10 h-px bg-brandGold/40"></span>
           </div>
-          <span class="font-serifTc text-xs text-stone-600 tracking-wider">秒</span>
+          <span class="font-serifTc text-xs sm:text-sm text-stone-600 tracking-wider">秒</span>
         </div>
       </div>
     </div>
@@ -270,19 +271,6 @@
         <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
       </div>
     </div>
-  <!-- 關於我們 ‧ 囍訴 (垂直 V-Card 設計) -->
-  <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
-    <div class="text-center mb-16">
-      <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">Our Story &amp; Invitation</span>
-      <h2 class="font-serifTc text-3xl sm:text-4xl text-stone-800 mt-1 font-normal tracking-wide">關於我們 ‧ 囍訴</h2>
-      <div class="flex items-center justify-center gap-2 mt-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
-        <span class="w-12 h-px bg-brandGold/70"></span>
-        <span class="text-brandRed text-xs">❖</span>
-        <span class="w-12 h-px bg-brandGold/70"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-brandGold"></span>
-      </div>
-    </div>
 
     <!-- 垂直 V-Card 新中式卡片區域（喜帖雙層紅金細框） -->
     <div class="bg-white rounded-3xl p-6 sm:p-12 shadow-card-shadow border-2 border-brandRed/20 relative overflow-hidden">
@@ -293,7 +281,7 @@
       <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-brandGold/70"></div>
 
       <div class="text-center mb-6 relative z-10">
-        <span class="text-[11px] tracking-[0.35em] text-stone-400 font-serifTc">百年好合 &nbsp;‧&nbsp; 永結同心</span>
+        <span class="text-sm sm:text-base tracking-[0.35em] text-stone-600 font-serifKai">百年好合 &nbsp;‧&nbsp; 永結同心</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
@@ -303,17 +291,34 @@
             結緣
           </div>
           
-          <div class="hidden md:flex writing-mode-vertical h-80 tracking-widest text-stone-700 leading-loose text-base font-serifTc py-4">
-            廣袤世界，能遇見彼此是最大的奇蹟。<br/>
-            漫漫長路，你是我這輩子最勇敢、最美好的冒險。<br/>
-            誠摯邀請您，見證我們攜手邁入新章節的這一刻。
+          <div class="hidden md:flex writing-mode-vertical h-[22rem] tracking-widest text-stone-700 leading-loose text-sm font-serifTc py-4">
+            穀倉，收藏的是一年的豐收；<br/>
+            婚禮，收藏的是一生的承諾。<br/>
+            當歲月將四季珍藏於倉中，<br/>
+            我們也將彼此的名字，珍藏於往後的日子裡。<br/>
+            我們很幸運，<br/>
+            在人生很長的路上遇見了彼此。<br/>
+            於是決定，在一個值得記住的日子，<br/>
+            與所愛的人、最重要的家人與朋友，<br/>
+            一起見證我們成為一家人。
           </div>
 
           <!-- 手機版橫排呈現 -->
-          <div class="block md:hidden text-center text-stone-700 leading-relaxed font-serifTc py-2">
-            <p class="mb-3">廣袤世界，能遇見彼此是最大的奇蹟。</p>
-            <p class="mb-3">漫漫長路，你是我這輩子最勇敢、最美好的冒險。</p>
-            <p>誠摯邀請您，見證我們攜手邁入新章節的這一刻。</p>
+          <div class="block md:hidden text-center text-stone-700 leading-relaxed text-sm font-serifTc py-2 space-y-3">
+            <p>
+              穀倉，收藏的是一年的豐收；<br/>
+              婚禮，收藏的是一生的承諾。
+            </p>
+            <p>
+              當歲月將四季珍藏於倉中，<br/>
+              我們也將彼此的名字，珍藏於往後的日子裡。
+            </p>
+            <p>
+              我們很幸運，在人生很長的路上遇見了彼此。<br/>
+              於是決定，在一個值得記住的日子，<br/>
+              與所愛的人、最重要的家人與朋友，<br/>
+              一起見證我們成為一家人。
+            </p>
           </div>
 
           <div class="mt-6 text-center">
@@ -322,35 +327,55 @@
           </div>
         </div>
 
-        <!-- 右側 新郎新娘精緻 V-Card 名片 -->
+        <!-- 右側 新郎新娘精緻 V-Card 名片（含清晰家長排列） -->
         <div class="md:col-span-7 space-y-6">
-          <div class="p-6 bg-white rounded-xl border border-stone-200/80 shadow-sm flex items-center gap-6">
-            <div class="w-16 h-16 rounded-full bg-[#FDFBF7] flex items-center justify-center text-brandRed font-serifEn text-xl font-bold border border-brandGold/50 shrink-0">
+          <!-- 新郎卡片 -->
+          <div class="p-6 sm:p-7 bg-white rounded-2xl border border-brandGold/30 shadow-sm flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-6">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#FDFBF7] flex items-center justify-center text-brandRed font-serifEn text-xl font-bold border border-brandGold/50 shrink-0">
               LI
             </div>
-            <div>
-              <div class="flex items-baseline gap-2">
-                <span class="font-serifTc text-lg font-semibold text-stone-800">李維哲</span>
+            <div class="flex-1 min-w-0 w-full">
+              <div class="flex items-baseline justify-center sm:justify-start gap-2.5">
+                <span class="font-serifTc text-lg sm:text-xl font-semibold text-stone-800 tracking-wide">李維哲</span>
                 <span class="font-serifEn text-xs text-brandGold font-bold uppercase tracking-widest">VCOLE ‧ Groom</span>
               </div>
-              <p class="text-stone-500 text-sm font-serifTc mt-1 leading-relaxed">
+              <p class="text-stone-600 text-sm font-serifTc mt-2 leading-relaxed">
                 「因為有妳，平凡的日子都成了值得收藏的冒險旅程。」
               </p>
+              <!-- 男方家長 -->
+              <div class="mt-4 pt-3.5 border-t border-brandGold/25 font-serifTc text-xs sm:text-sm text-stone-700">
+                <p class="text-stone-500 text-xs tracking-wider mb-1">男方家長：</p>
+                <p class="font-medium text-stone-800 tracking-wider flex flex-wrap items-center justify-center sm:justify-start gap-x-3.5 gap-y-1">
+                  <span class="whitespace-nowrap">李徐双媛</span>
+                  <span class="whitespace-nowrap">李建德</span>
+                  <span class="whitespace-nowrap">陳麗鈴</span>
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="p-6 bg-white rounded-xl border border-stone-200/80 shadow-sm flex items-center gap-6">
-            <div class="w-16 h-16 rounded-full bg-[#FDFBF7] flex items-center justify-center text-brandRed font-serifEn text-xl font-bold border border-brandGold/50 shrink-0">
+          <!-- 新娘卡片 -->
+          <div class="p-6 sm:p-7 bg-white rounded-2xl border border-brandGold/30 shadow-sm flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-6">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#FDFBF7] flex items-center justify-center text-brandRed font-serifEn text-xl font-bold border border-brandGold/50 shrink-0">
               YU
             </div>
-            <div>
-              <div class="flex items-baseline gap-2">
-                <span class="font-serifTc text-lg font-semibold text-stone-800">游加鈺</span>
+            <div class="flex-1 min-w-0 w-full">
+              <div class="flex items-baseline justify-center sm:justify-start gap-2.5">
+                <span class="font-serifTc text-lg sm:text-xl font-semibold text-stone-800 tracking-wide">游加鈺</span>
                 <span class="font-serifEn text-xs text-brandGold font-bold uppercase tracking-widest">YULIE ‧ Bride</span>
               </div>
-              <p class="text-stone-500 text-sm font-serifTc mt-1 leading-relaxed">
+              <p class="text-stone-600 text-sm font-serifTc mt-2 leading-relaxed">
                 「最好的愛，是攜手看遍風景後，依然認定彼此是唯一的歸宿。」
               </p>
+              <!-- 女方家長 -->
+              <div class="mt-4 pt-3.5 border-t border-brandGold/25 font-serifTc text-xs sm:text-sm text-stone-700">
+                <p class="text-stone-500 text-xs tracking-wider mb-1">女方家長：</p>
+                <p class="font-medium text-stone-800 tracking-wider flex flex-wrap items-center justify-center sm:justify-start gap-x-3.5 gap-y-1">
+                  <span class="whitespace-nowrap">吳秀娥</span>
+                  <span class="whitespace-nowrap">游啟聖</span>
+                  <span class="whitespace-nowrap">林采秀</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
