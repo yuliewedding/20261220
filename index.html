@@ -557,12 +557,12 @@
             <p>* 貼心提醒：12:00 午宴準時開始，建議賓客提早抵達福興穀倉入席與留影。</p>
             <button type="button" onclick="downloadWeddingCalendar()" class="inline-flex items-center gap-1.5 text-brandRed hover:text-red-800 font-medium transition-colors">
               <i class="fa-regular fa-calendar-plus text-xs"></i>
-              <span>一鍵加入手機行事曆（2026/12/20 12:00）</span>
-            </button>
+          <div class="mt-8 pt-4 border-t border-brandGold/20 text-xs text-stone-500 font-serifTc">
+            <p>* 貼心提醒：12:00 午宴準時開始，建議賓客提早抵達福興穀倉入席與留影。</p>
           </div>
         </div>
 
-        <!-- 右卡片：Dress Code 色卡建議 + AI 穿搭管家 -->
+        <!-- 右卡片：Dress Code 着裝建議 -->
         <div class="bg-white/95 rounded-3xl p-8 shadow-card-shadow border border-brandGold/35 flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-3 text-brandRed font-serifTc font-semibold text-lg mb-4 border-b border-brandGold/25 pb-3">
@@ -610,16 +610,6 @@
           </div>
 
           <div class="mt-6 pt-5 border-t border-brandGold/20">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-semibold text-stone-800 font-serifTc flex items-center gap-1.5">
-                <i class="fa-solid fa-wand-magic-sparkles text-brandGold"></i>
-                穿搭靈感猶豫不決？
-              </span>
-              <button type="button" onclick="openOutfitModal()" class="text-xs font-serifTc text-brandRed hover:text-red-800 font-medium tracking-wider flex items-center gap-1">
-                <span>✨ 獲取專屬穿搭靈感</span>
-                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </button>
-            </div>
             <div class="p-2.5 bg-brandGold/15 rounded-xl text-center">
               <p class="text-[11px] text-stone-700 font-serifTc">推薦元素：新中式盤扣、唐裝、旗袍、復古西裝外套</p>
             </div>
@@ -863,57 +853,10 @@
     </div>
   </div>
 
-  <!-- Dress Code AI 穿搭顧問 Modal -->
-  <div id="outfit-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 p-4">
-    <div class="bg-stone-900 border border-brandGold/40 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-white shadow-2xl transform scale-95 transition-transform duration-300 relative max-h-[90vh] overflow-y-auto no-scrollbar">
-      <button type="button" onclick="closeOutfitModal()" class="absolute top-5 right-5 text-stone-400 hover:text-white text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="text-center mb-6">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brandGold/20 text-brandGold mb-2">
-          <i class="fa-solid fa-sparkles text-xl"></i>
-        </div>
-        <h3 class="font-serifTc text-xl font-bold text-stone-100">新中式穿搭靈感管家</h3>
-        <p class="text-xs text-stone-400 font-serifTc mt-1">告訴 AI 您的穿著偏好，即刻客製大氣得體的宴席造型</p>
-      </div>
-
-      <div class="space-y-4 font-serifTc text-sm">
-        <div>
-          <label class="block text-xs text-stone-300 mb-1.5">穿著身份 / 偏好剪裁</label>
-          <div class="grid grid-cols-2 gap-2">
-            <button type="button" onclick="setOutfitGender(event, '女裝 (優雅裙裝/旗袍/中式套裝)')" class="gender-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs">女仕風格 (旗袍/裙裝)</button>
-            <button type="button" onclick="setOutfitGender(event, '男裝 (雅痞唐裝/復古西裝/休閒雅仕)')" class="gender-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">男仕風格 (唐裝/西服)</button>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-xs text-stone-300 mb-1.5">心儀的風格調性</label>
-          <div class="grid grid-cols-2 gap-2">
-            <button type="button" onclick="setOutfitColor(event, '典雅旗袍調性')" class="color-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs">典雅旗袍調性</button>
-            <button type="button" onclick="setOutfitColor(event, '摩登俐落調性')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">摩登俐落調性</button>
-            <button type="button" onclick="setOutfitColor(event, '復古暖調氛圍')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">復古暖調氛圍</button>
-            <button type="button" onclick="setOutfitColor(event, '老上海懷舊風華')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">老上海懷舊風華</button>
-          </div>
-        </div>
-
-        <button type="button" id="generate-outfit-btn" onclick="generateOutfitAdvice()" class="w-full py-3 bg-brandGold hover:bg-amber-600 text-stone-950 font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 mt-2">
-          <span>✨ 生成專屬穿搭指南</span>
-        </button>
-
-        <div id="outfit-result-box" class="p-4 bg-stone-950/60 rounded-2xl border border-stone-700/80 text-xs leading-relaxed text-stone-300 hidden">
-          <p id="outfit-result-text" class="whitespace-pre-line"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
     // 0. Gemini API 整合設定
     const apiKey = "";
     let currentTone = 'poetic';
-    let outfitGender = '女裝 (優雅裙裝/旗袍/中式套裝)';
-    let outfitColor = '典雅旗袍調性';
 
     async function callGemini(payload, maxRetries = 5) {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
@@ -1001,83 +944,6 @@
       } finally {
         btn.disabled = false;
         btn.innerHTML = originalBtnHtml;
-      }
-    }
-
-    function openOutfitModal() {
-      const modal = document.getElementById('outfit-modal');
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        modal.querySelector('div').classList.remove('scale-95');
-        modal.querySelector('div').classList.add('scale-100');
-      }, 10);
-    }
-
-    function closeOutfitModal() {
-      const modal = document.getElementById('outfit-modal');
-      modal.classList.add('opacity-0');
-      modal.querySelector('div').classList.add('scale-95');
-      modal.querySelector('div').classList.remove('scale-100');
-      setTimeout(() => modal.classList.add('hidden'), 300);
-    }
-
-    function setOutfitGender(e, val) {
-      outfitGender = val;
-      document.querySelectorAll('.gender-btn').forEach(btn => {
-        btn.className = 'gender-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs';
-      });
-      if (e && e.currentTarget) {
-        e.currentTarget.className = 'gender-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs';
-      }
-    }
-
-    function setOutfitColor(e, val) {
-      outfitColor = val;
-      document.querySelectorAll('.color-btn').forEach(btn => {
-        btn.className = 'color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs';
-      });
-      if (e && e.currentTarget) {
-        e.currentTarget.className = 'color-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs';
-      }
-    }
-
-    async function generateOutfitAdvice() {
-      const btn = document.getElementById('generate-outfit-btn');
-      const box = document.getElementById('outfit-result-box');
-      const textElem = document.getElementById('outfit-result-text');
-
-      const originalText = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i> <span>顧問量身搭配中...</span>';
-
-      const systemPrompt = `你是一位專研新中式時尚與婚宴禮儀的高級造型顧問。
-婚禮地點在彰化福興穀倉（帶有文藝復古紅磚質感），Dress code 主題是新中式、老上海與摩登復古。
-請提供精準實用的穿搭建議。
-要求：
-1. 繁體中文，親切大方。
-2. 包含三大部分：【上身與服裝剪裁】、【配件與鞋履亮點】、【禁忌提醒 (如不搶新娘風采)】。
-3. 總字數約 120~180 字，條理清晰，排版優雅。`;
-
-      const userQuery = `賓客類型：${outfitGender}
-選擇色彩：${outfitColor}
-請給予契合新中式復古美學與福興穀倉婚宴場地的具體穿搭推薦。`;
-
-      const payload = {
-        contents: [{ parts: [{ text: userQuery }] }],
-        systemInstruction: { parts: [{ text: systemPrompt }] }
-      };
-
-      try {
-        const advice = await callGemini(payload);
-        textElem.textContent = advice.trim();
-        box.classList.remove('hidden');
-      } catch (e) {
-        textElem.textContent = '【上身與服裝剪裁】建議挑選帶有提花暗紋或中式盤扣設計的單品，與福興穀倉紅磚古蹟相互輝映。\n【配件與鞋履亮點】可搭配珍珠耳飾、玉石胸針或復古絲絨包款增添典雅質感。\n【禁忌提醒】避免全身純白或過於繁複拖尾禮服，讓焦點留給新人。';
-        box.classList.remove('hidden');
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = originalText;
       }
     }
 
@@ -1307,39 +1173,10 @@
       selectGalleryPhoto(nextIndex);
     }
 
-    // 6. 一鍵下載婚禮行事曆 (.ics)
-    function downloadWeddingCalendar() {
-      const icsContent = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Li & Yu Wedding//2026//ZH',
-        'BEGIN:VEVENT',
-        'UID:li-yu-wedding-20261220@fuxing-granary',
-        'DTSTAMP:20261123T120000Z',
-        'DTSTART;TZID=Asia/Taipei:20261220T120000',
-        'DTEND;TZID=Asia/Taipei:20261220T153000',
-        'SUMMARY:李維哲 & 游加鈺 婚禮午宴',
-        'LOCATION:福興穀倉（彰化縣福興鄉橋頭村復興路28號）',
-        'DESCRIPTION:穀藏良緣・喜結豐年｜午宴 12:00 準時開始，誠摯邀請您共赴喜宴。',
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
-
-      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'Li-Yu-Wedding-20261220.ics');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
       startCountdown();
       selectGalleryPhoto(0);
     });
   </script>
 </body>
-</html></selection-tag>
+</html>
