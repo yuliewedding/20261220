@@ -597,70 +597,80 @@
         </button>
         <div id="acc-rail" class="accordion-content active px-6 border-t border-stone-100 bg-[#FDFBF7]/80">
           <div class="py-6 space-y-6">
-            <!-- 單一互動式 Google 街景顯示（精準定位福興穀倉座標） -->
-            <div class="rounded-2xl overflow-hidden shadow-sm border border-brandGold/30 h-72 sm:h-96 relative bg-stone-200">
+            <!-- 互動式 Google 地圖顯示（精準定位指定座標，並支援點擊紅色定位點直接外連導航） -->
+            <div class="rounded-2xl overflow-hidden shadow-sm border border-brandGold/30 h-72 sm:h-96 relative bg-stone-200 group">
               <iframe
                 class="w-full h-full border-0"
-                title="福興穀倉 Google 街景顯示"
-                src="https://maps.google.com/maps?layer=c&cbll=24.049712,120.440137&cbp=12,290,,0,0&hl=zh-TW&source=embed&output=svembed"
+                title="福興穀倉 Google 地圖顯示"
+                src="https://maps.google.com/maps?q=24.0498311,120.4408424&z=17&hl=zh-TW&output=embed"
                 loading="lazy"
                 allowfullscreen
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
+              <!-- 紅色定位點外連導航點擊熱區（覆蓋地圖中央紅色圖釘處，不影響周圍拖曳縮放） -->
+              <a
+                href="https://maps.app.goo.gl/qBN1nmZ1t5Kv4PNfA"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="點擊定位點開啟 Google 地圖導航"
+                aria-label="點擊紅色定位點開啟 Google 地圖導航"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full w-16 h-20 z-10 cursor-pointer flex items-start justify-center"
+              >
+                <span class="sr-only">開啟 Google 地圖導航</span>
+              </a>
             </div>
 
             <!-- 一鍵開啟 Google 地圖導航連結 -->
             <div class="text-center">
-              <a href="https://www.google.com/maps/search/?api=1&query=%E5%BD%B0%E5%8C%96%E7%B8%A3%E7%A6%8F%E8%88%88%E9%84%89%E6%A9%8B%E9%A0%AD%E6%9D%91%E5%BE%A9%E8%88%88%E8%B7%AF28%E8%99%9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-brandRed hover:text-red-800 font-serifTc font-medium transition-colors">
+              <a href="https://maps.app.goo.gl/qBN1nmZ1t5Kv4PNfA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-brandRed hover:text-red-800 font-serifTc font-medium transition-colors">
                 <i class="fa-solid fa-street-view"></i>
                 <span>開啟 Google 地圖導航（<span class="whitespace-nowrap">彰化縣福興鄉橋頭村復興路28號</span>）</span>
               </a>
             </div>
 
-            <!-- 轉乘指引說明 -->
+            <!-- 交通資訊卡片 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-stone-700 font-serifTc">
-              <div class="p-3.5 bg-white rounded-lg border border-brandGold/25">
-                <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">高鐵台中站</span> / <span class="whitespace-nowrap">台鐵彰化站</span></p>
-                <p class="text-stone-600 leading-relaxed">抵達後可轉乘台灣好行鹿港祈福線或彰化客運，於<span class="whitespace-nowrap">福興穀倉站</span>或<span class="whitespace-nowrap">鹿港乘車處</span>下車步行約3分鐘抵達。</p>
+              <div class="p-4 bg-white rounded-xl border border-brandGold/25">
+                <p class="font-bold text-stone-800 mb-1.5 flex items-center gap-1.5">
+                  <i class="fa-solid fa-car text-brandRed text-xs"></i>
+                  <span class="whitespace-nowrap">自行開車</span>
+                </p>
+                <p class="text-stone-600 leading-relaxed">
+                  國道一號由<span class="whitespace-nowrap">彰化交流道</span>下，接台19線彰鹿路往鹿港/福興方向直行即可抵達。<br />
+                  園區旁設有專屬賓客停車場及周邊公有收費停車場，停車便利。
+                </p>
               </div>
-              <div class="p-3.5 bg-white rounded-lg border border-brandGold/25">
-                <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">計程車與專車接駁</span></p>
+              <div class="p-4 bg-white rounded-xl border border-brandGold/25">
+                <p class="font-bold text-stone-800 mb-1.5 flex items-center gap-1.5">
+                  <i class="fa-solid fa-taxi text-brandRed text-xs"></i>
+                  <span class="whitespace-nowrap">計程車與專車接駁</span>
+                </p>
                 <p class="text-stone-600 leading-relaxed">由<span class="whitespace-nowrap">高鐵台中站</span>搭乘計程車約25-30分鐘即可直達會場。</p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- 面板 2: 自行開車與停車 -->
-      <div class="bg-white/95 rounded-2xl border border-brandGold/35 overflow-hidden shadow-sm">
-        <button type="button" onclick="toggleAccordion('acc-parking')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-[#FBF5E6]/50 transition-colors">
-          <div class="flex items-center gap-3 font-serifTc font-semibold text-stone-800">
-            <i class="fa-solid fa-square-parking text-brandRed"></i>
-            <span>自行開車與停車 Parking Guide</span>
-          </div>
-          <i id="icon-acc-parking" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300"></i>
-        </button>
-        <div id="acc-parking" class="accordion-content px-6 border-t border-brandGold/20 bg-[#FBF5E6]/40">
-          <div class="py-6 space-y-3 text-xs sm:text-sm text-stone-700 font-serifTc">
-            <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>國道一號由<span class="whitespace-nowrap">彰化交流道</span>下，接台19線彰鹿路往鹿港/福興方向直行即可抵達。</p>
-            <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>園區旁設有專屬賓客停車場及周邊公有收費停車場，停車便利。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 面板 3: 公車客運路線 -->
-      <div class="bg-white/95 rounded-2xl border border-brandGold/35 overflow-hidden shadow-sm">
-        <button type="button" onclick="toggleAccordion('acc-bus')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-[#FBF5E6]/50 transition-colors">
-          <div class="flex items-center gap-3 font-serifTc font-semibold text-stone-800">
-            <i class="fa-solid fa-bus text-brandRed"></i>
-            <span>公車客運路線 Bus Routes</span>
-          </div>
-          <i id="icon-acc-bus" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300"></i>
-        </button>
-        <div id="acc-bus" class="accordion-content px-6 border-t border-brandGold/20 bg-[#FBF5E6]/40">
-          <div class="py-6 text-xs sm:text-sm text-stone-700 font-serifTc leading-relaxed">
-            搭乘彰化客運至<span class="whitespace-nowrap">福興穀倉站</span>或<span class="whitespace-nowrap">鹿港總站</span>下車，步行約3分鐘即可到達。<span class="whitespace-nowrap">可搭乘路線：6900, 6934, 6936</span>。
+            <!-- 現場入口與午宴位置實景指引圖 -->
+            <div class="bg-white rounded-2xl p-3 sm:p-4 border border-brandGold/30 shadow-sm space-y-2.5">
+              <div class="flex items-center justify-between px-1">
+                <span class="font-serifTc text-xs sm:text-sm font-semibold text-stone-800 flex items-center gap-1.5">
+                  <i class="fa-solid fa-location-crosshairs text-brandRed"></i>
+                  <span>福興穀倉入口與午宴位置實景指引</span>
+                </span>
+                <span class="font-serifEn text-[11px] text-brandGold uppercase tracking-wider font-semibold">Entrance Guide</span>
+              </div>
+              <div class="rounded-xl overflow-hidden border border-stone-200/80 bg-stone-100">
+                <img
+                  src="https://i.postimg.cc/5tYTmDYg/wu-yan-wei-zhi.webp"
+                  alt="福興穀倉婚禮午宴位置實景指引"
+                  referrerpolicy="no-referrer"
+                  loading="lazy"
+                  class="w-full h-auto object-contain block"
+                />
+              </div>
+              <p class="text-[11px] sm:text-xs text-stone-500 font-serifTc px-1 leading-relaxed">
+                * 抵達復興路路口時，請由「福興鄉農會」白色倉庫右側通道進入，即可抵達紅色標示處的婚禮午宴會場。
+              </p>
+            </div>
           </div>
         </div>
       </div>
