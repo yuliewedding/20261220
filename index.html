@@ -58,20 +58,7 @@
       text-orientation: mixed;
     }
 
-    /* 新中式雲紋/細線背景邊框裝飾 */
-    .border-pattern {
-      border: 1px solid rgba(196, 164, 124, 0.3);
-      position: relative;
-    }
-    .border-pattern::before {
-      content: '';
-      position: absolute;
-      top: 4px; left: 4px; right: 4px; bottom: 4px;
-      border: 1px solid rgba(184, 58, 49, 0.2);
-      pointer-events: none;
-    }
-
-    /* 摺疊面板淡入過渡 */
+    /* 摺疊面板過渡 */
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -94,6 +81,7 @@
 </head>
 <body class="antialiased selection:bg-brandRed selection:text-white">
 
+  <!-- 頂部固定毛玻璃導覽列 -->
   <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/75 border-b border-stone-200/60 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <!-- 品牌/雙姓氏鋼印印章標誌 -->
@@ -101,7 +89,7 @@
         <div class="w-8 h-8 rounded-full bg-brandRed flex items-center justify-center text-white font-serifTc text-xs shadow-md group-hover:scale-105 transition-transform">
           囍
         </div>
-        <span class="font-serifEn text-xl font-semibold tracking-widest text-stone-800">LI & YU</span>
+        <span class="font-serifEn text-xl font-semibold tracking-widest text-stone-800">LI &amp; YU</span>
       </a>
 
       <!-- 導航選單 -->
@@ -113,10 +101,10 @@
     </div>
   </nav>
 
+  <!-- 首頁全螢幕封面背景 -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-stone-900 text-white">
-    <!-- 全螢幕封面背景圖 -->
     <div class="absolute inset-0 z-0">
-      <img src="https://i.postimg.cc/3Rg1kJ9J/S-425074717.jpg" alt="Li & Yu Wedding Cover" class="w-full h-full object-cover object-center scale-105 animate-pulse-subtle opacity-80" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80'" />
+      <img src="https://i.postimg.cc/3Rg1kJ9J/S-425074717.jpg" alt="Li & Yu Wedding Cover" class="w-full h-full object-cover object-center scale-105 opacity-80" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80'" />
       <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/40 to-stone-900/30"></div>
     </div>
 
@@ -148,14 +136,13 @@
     </div>
   </section>
 
+  <!-- 倒數計時器視覺 (白色微光卡片與柔和陰影) -->
   <section id="countdown" class="py-16 px-4 bg-stone-100/60 relative -mt-6 z-20 rounded-t-3xl border-t border-stone-200/50">
     <div class="max-w-4xl mx-auto text-center">
       <p class="font-serifEn text-xs sm:text-sm uppercase tracking-widest text-brandGold font-semibold mb-2">Counting Down To Our Forever</p>
       <h2 class="font-serifTc text-2xl sm:text-3xl text-stone-800 tracking-wider mb-10">婚禮倒數計時</h2>
 
-      <!-- 藝術感倒數計時器容器 -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
-        
         <!-- 天數卡片 -->
         <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-soft-glow border border-stone-100 flex flex-col items-center justify-between relative overflow-hidden group hover:-translate-y-1 transition-all">
           <div class="text-stone-400 font-serifEn text-xs tracking-widest mb-1">DAYS</div>
@@ -195,11 +182,11 @@
           </div>
           <span class="font-serifTc text-xs text-stone-600 tracking-wider">秒</span>
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- 關於我們 ‧ 囍訴 (垂直 V-Card 設計) -->
   <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">Our Story &amp; Invitation</span>
@@ -209,16 +196,14 @@
 
     <!-- 垂直 V-Card 新中式卡片區域 -->
     <div class="bg-white rounded-3xl p-6 sm:p-12 shadow-card-shadow border border-stone-200/70 relative overflow-hidden">
-      <!-- 新中式傳統邊角花紋裝飾 -->
       <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-brandGold/60"></div>
       <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-brandGold/60"></div>
       <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-brandGold/60"></div>
       <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-brandGold/60"></div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <!-- 左側 V-Card 垂直感性文案 (大螢幕呈現垂直直排) -->
+        <!-- 左側 V-Card 垂直感性文案 -->
         <div class="md:col-span-5 flex flex-col items-center justify-center p-6 bg-stone-50 rounded-2xl border border-stone-200/50 relative">
-          <!-- 紅色傳統印章 -->
           <div class="absolute top-4 right-4 w-10 h-10 border border-brandRed text-brandRed flex items-center justify-center rounded text-xs font-serifTc font-bold rotate-12 opacity-80">
             結緣
           </div>
@@ -277,16 +262,17 @@
       </div>
     </div>
 
-    <!-- 精選婚紗藝廊 (Interactive Photo Carousel - 直式 1045:1567 長方形黃金比例) -->
-    <div class="mt-12 relative group max-w-sm sm:max-w-md mx-auto" id="wedding-carousel">
-      <div class="relative rounded-3xl overflow-hidden shadow-card-shadow border border-stone-200/80 aspect-[1045/1567] bg-stone-900">
-        <!-- Slides Container -->
-        <div id="carousel-slides" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+    <!-- 精選婚紗藝廊 (1045:1567 長方形黃金比例相框) -->
+    <div class="mt-12 relative group max-w-sm sm:max-w-md mx-auto select-none" id="wedding-carousel">
+      <div class="relative rounded-3xl overflow-hidden shadow-card-shadow border border-stone-200/80 aspect-[1045/1567] bg-stone-900 cursor-grab active:cursor-grabbing">
+        
+        <!-- Slides 容器 -->
+        <div id="carousel-slides" class="flex w-full h-full transition-transform duration-700 ease-out">
           
           <!-- Slide 1 -->
           <div class="min-w-full h-full relative shrink-0">
-            <img src="https://i.postimg.cc/yYSGKsCx/S-425074712-0.jpg" alt="Li & Yu Wedding Photo 1" class="w-full h-full object-cover object-center opacity-95" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'" />
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
+            <img src="https://i.postimg.cc/yYSGKsCx/S-425074712-0.jpg" alt="Li & Yu Wedding Photo 1" class="w-full h-full object-cover object-center opacity-95 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
               <div class="text-white">
                 <p class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase mb-1">Moment of Eternity</p>
                 <p class="font-serifTc text-lg sm:text-xl font-light tracking-widest text-stone-100">執子之手 ‧ 與子偕老</p>
@@ -296,8 +282,8 @@
 
           <!-- Slide 2 -->
           <div class="min-w-full h-full relative shrink-0">
-            <img src="https://i.postimg.cc/gc69zvvn/S-425074694.jpg" alt="Li & Yu Wedding Photo 2" class="w-full h-full object-cover object-center opacity-95" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80'" />
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
+            <img src="https://i.postimg.cc/gc69zvvn/S-425074694.jpg" alt="Li & Yu Wedding Photo 2" class="w-full h-full object-cover object-center opacity-95 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
               <div class="text-white">
                 <p class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase mb-1">Journey of Love</p>
                 <p class="font-serifTc text-lg sm:text-xl font-light tracking-widest text-stone-100">相知相守 ‧ 歲月靜好</p>
@@ -307,8 +293,8 @@
 
           <!-- Slide 3 -->
           <div class="min-w-full h-full relative shrink-0">
-            <img src="https://i.postimg.cc/C1Gj7P3f/S-425074711-0.jpg" alt="Li & Yu Wedding Photo 3" class="w-full h-full object-cover object-center opacity-95" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80'" />
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
+            <img src="https://i.postimg.cc/C1Gj7P3f/S-425074711-0.jpg" alt="Li & Yu Wedding Photo 3" class="w-full h-full object-cover object-center opacity-95 pointer-events-none" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent flex items-end p-6 sm:p-8">
               <div class="text-white">
                 <p class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase mb-1">Warmth of Love</p>
                 <p class="font-serifTc text-lg sm:text-xl font-light tracking-widest text-stone-100">溫柔相伴 ‧ 餘生皆你</p>
@@ -318,24 +304,25 @@
 
         </div>
 
-        <!-- Carousel Left/Right Nav Buttons -->
-        <button onclick="prevSlide()" aria-label="Previous Slide" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-stone-900/40 hover:bg-stone-900/80 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 active:scale-95 z-10">
+        <!-- 左右控制按鈕 -->
+        <button type="button" onclick="prevSlide(event)" aria-label="Previous Slide" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-stone-900/40 hover:bg-stone-900/80 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 active:scale-90 z-20">
           <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
         </button>
-        <button onclick="nextSlide()" aria-label="Next Slide" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-stone-900/40 hover:bg-stone-900/80 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 active:scale-95 z-10">
+        <button type="button" onclick="nextSlide(event)" aria-label="Next Slide" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-stone-900/40 hover:bg-stone-900/80 text-white backdrop-blur-md flex items-center justify-center border border-white/20 transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 active:scale-90 z-20">
           <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
         </button>
 
-        <!-- Indicators / Dots -->
-        <div id="carousel-dots" class="absolute bottom-4 right-6 flex items-center gap-2 z-10">
-          <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white transition-all shadow-sm" aria-label="Slide 1"></button>
-          <button onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all shadow-sm" aria-label="Slide 2"></button>
-          <button onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all shadow-sm" aria-label="Slide 3"></button>
+        <!-- 圓點指示器 -->
+        <div id="carousel-dots" class="absolute bottom-4 right-6 flex items-center gap-2 z-20">
+          <button type="button" onclick="goToSlide(0)" class="w-6 h-2.5 rounded-full bg-brandGold transition-all shadow-sm" aria-label="Slide 1"></button>
+          <button type="button" onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80 transition-all shadow-sm" aria-label="Slide 2"></button>
+          <button type="button" onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80 transition-all shadow-sm" aria-label="Slide 3"></button>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 婚禮詳情與著裝指南 (Dress Code) -->
   <section id="details" class="py-20 px-4 bg-stone-100/50">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
@@ -361,7 +348,7 @@
                 </div>
                 <div>
                   <h4 class="font-serifTc font-semibold text-stone-800">婚禮日期 &amp; 時間</h4>
-                  <p class="text-sm text-stone-600 mt-1"><span class="whitespace-nowrap">2026年12月20日 星期三</span></p>
+                  <p class="text-sm text-stone-600 mt-1"><span class="whitespace-nowrap">2026年12月20日 星期日</span></p>
                   <p class="text-sm font-semibold text-brandRed mt-0.5"><span class="whitespace-nowrap">午宴 12:00 準時開桌</span> (11:30 入席)</p>
                 </div>
               </div>
@@ -384,57 +371,72 @@
           </div>
         </div>
 
-        <!-- 右卡片：Dress Code 色卡建議 -->
-        <div class="bg-white rounded-3xl p-8 shadow-card-shadow border border-stone-200/80">
-          <div class="flex items-center gap-3 text-brandRed font-serifTc font-semibold text-lg mb-4 border-b border-stone-100 pb-3">
-            <i class="fa-solid fa-vest-patches text-xl"></i>
-            <span>着裝建議 Dress Code</span>
+        <!-- 右卡片：Dress Code 色卡建議 + AI 穿搭管家 -->
+        <div class="bg-white rounded-3xl p-8 shadow-card-shadow border border-stone-200/80 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 text-brandRed font-serifTc font-semibold text-lg mb-4 border-b border-stone-100 pb-3">
+              <i class="fa-solid fa-vest-patches text-xl"></i>
+              <span>着裝建議 Dress Code</span>
+            </div>
+
+            <p class="text-xs text-stone-500 font-serifTc mb-6 leading-relaxed">
+              為配合我們特別規劃的新中式復古盛會，誠摯邀請您以以下風格元素或色系出席，共赴這場摩登復古美宴：
+            </p>
+
+            <div class="grid grid-cols-2 gap-4">
+              <!-- 旗袍 (#9E2A2B) -->
+              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#9E2A2B] shadow-sm shrink-0 border border-white"></div>
+                <div>
+                  <p class="text-xs font-bold text-stone-800">旗袍風韻</p>
+                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#9E2A2B</p>
+                </div>
+              </div>
+
+              <!-- 摩登 (#6B46C1) -->
+              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#6B46C1] shadow-sm shrink-0 border border-white"></div>
+                <div>
+                  <p class="text-xs font-bold text-stone-800">摩登紫調</p>
+                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#6B46C1</p>
+                </div>
+              </div>
+
+              <!-- 復古 (#D69E2E) -->
+              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#D69E2E] shadow-sm shrink-0 border border-white"></div>
+                <div>
+                  <p class="text-xs font-bold text-stone-800">復古暖金</p>
+                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#D69E2E</p>
+                </div>
+              </div>
+
+              <!-- 老上海 (#FEEBC8) -->
+              <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#FEEBC8] shadow-sm shrink-0 border border-stone-300"></div>
+                <div>
+                  <p class="text-xs font-bold text-stone-800">老上海米黃</p>
+                  <p class="text-[10px] text-stone-400 font-serifEn uppercase">#FEEBC8</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <p class="text-xs text-stone-500 font-serifTc mb-6 leading-relaxed">
-            為配合我們特別規劃的新中式復古盛會，誠摯邀請您以以下風格元素或色系出席，共赴這場摩登復古美宴：
-          </p>
-
-          <div class="grid grid-cols-2 gap-4">
-            <!-- 旗袍 (#9E2A2B) -->
-            <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-[#9E2A2B] shadow-sm shrink-0 border border-white"></div>
-              <div>
-                <p class="text-xs font-bold text-stone-800">旗袍風韻</p>
-                <p class="text-[10px] text-stone-400 font-serifEn uppercase">#9E2A2B</p>
-              </div>
+          <!-- ✨ Gemini 智能穿搭靈感顧問 -->
+          <div class="mt-6 pt-5 border-t border-stone-100">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-semibold text-stone-800 font-serifTc flex items-center gap-1.5">
+                <i class="fa-solid fa-wand-magic-sparkles text-brandGold"></i>
+                穿搭靈感猶豫不決？
+              </span>
+              <button type="button" onclick="openOutfitModal()" class="text-xs font-serifTc text-brandRed hover:text-red-800 font-medium tracking-wider flex items-center gap-1">
+                <span>✨ 獲取專屬穿搭靈感</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
             </div>
-
-            <!-- 摩登 (#6B46C1) -->
-            <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-[#6B46C1] shadow-sm shrink-0 border border-white"></div>
-              <div>
-                <p class="text-xs font-bold text-stone-800">摩登紫調</p>
-                <p class="text-[10px] text-stone-400 font-serifEn uppercase">#6B46C1</p>
-              </div>
+            <div class="p-2.5 bg-brandGold/10 rounded-xl text-center">
+              <p class="text-[11px] text-stone-600 font-serifTc">推薦元素：新中式盤扣、唐裝、旗袍、復古西裝外套</p>
             </div>
-
-            <!-- 復古 (#D69E2E) -->
-            <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-[#D69E2E] shadow-sm shrink-0 border border-white"></div>
-              <div>
-                <p class="text-xs font-bold text-stone-800">復古暖金</p>
-                <p class="text-[10px] text-stone-400 font-serifEn uppercase">#D69E2E</p>
-              </div>
-            </div>
-
-            <!-- 老上海 (#FEEBC8) -->
-            <div class="p-3 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-[#FEEBC8] shadow-sm shrink-0 border border-stone-300"></div>
-              <div>
-                <p class="text-xs font-bold text-stone-800">老上海米黃</p>
-                <p class="text-[10px] text-stone-400 font-serifEn uppercase">#FEEBC8</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 p-3 bg-brandGold/10 rounded-xl text-center">
-            <p class="text-xs text-stone-700 font-serifTc">推薦元素：新中式盤扣、唐裝、旗袍、復古西裝外套</p>
           </div>
         </div>
 
@@ -442,6 +444,7 @@
     </div>
   </section>
 
+  <!-- 交通指引 (Accordion 摺疊面板) -->
   <section class="py-20 px-4 max-w-5xl mx-auto">
     <div class="text-center mb-16">
       <span class="font-serifEn text-xs sm:text-sm tracking-widest text-brandGold uppercase font-semibold">Location &amp; Transportation</span>
@@ -449,33 +452,38 @@
       <div class="w-12 h-0.5 bg-brandRed/80 mx-auto mt-4"></div>
     </div>
 
-    <!-- 摺疊式面板 Accordion 交通資訊 -->
     <div class="space-y-4 max-w-4xl mx-auto">
       
-      <!-- 面板 1: 捷運搭乘 (預設展開) -->
+      <!-- 面板 1: 高鐵 / 台鐵與轉乘資訊 (預設展開) -->
       <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
-        <button onclick="toggleAccordion('acc-mrt')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
+        <button type="button" onclick="toggleAccordion('acc-rail')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
           <div class="flex items-center gap-3 font-serifTc font-semibold text-stone-800">
-            <i class="fa-solid fa-train-subway text-brandRed"></i>
-            <span>捷運搭乘資訊 MRT Station</span>
+            <i class="fa-solid fa-train text-brandRed"></i>
+            <span>高鐵 / 台鐵與轉乘資訊 HSR / TRA &amp; Transit</span>
           </div>
-          <i id="icon-acc-mrt" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300"></i>
+          <i id="icon-acc-rail" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300 rotate-180"></i>
         </button>
-        <div id="acc-mrt" class="accordion-content active px-6 border-t border-stone-100 bg-stone-50/50">
+        <div id="acc-rail" class="accordion-content active px-6 border-t border-stone-100 bg-stone-50/50">
           <div class="py-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <!-- 左邊地圖模式 -->
-            <div class="rounded-xl overflow-hidden shadow-sm border border-stone-200 h-56 relative bg-stone-200">
-              <iframe class="w-full h-full border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.498425553653!2d121.5226462761358!3d25.051086037604432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96f1b1c6131%3A0xb36ee9f635f1110b!2sRegent%20Taipei!5e0!3m2!1sen!2stw!4v1700000000000!5m2!1sen!2stw" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="space-y-2">
+              <div class="rounded-xl overflow-hidden shadow-sm border border-stone-200 h-56 relative bg-stone-200">
+                <iframe class="w-full h-full border-0" title="506彰化縣福興鄉橋頭村復興路28號 Google 地圖" src="https://maps.google.com/maps?q=506%E5%BD%B0%E5%8C%96%E7%B8%A3%E7%A6%8F%E8%88%88%E9%84%89%E6%A9%8B%E9%A0%AD%E6%9D%91%E5%BE%A9%E8%88%88%E8%B7%AF28%E8%99%9F&hl=zh-TW&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=506%E5%BD%B0%E5%8C%96%E7%B8%A3%E7%A6%8F%E8%88%88%E9%84%89%E6%A9%8B%E9%A0%AD%E6%9D%91%E5%BE%A9%E8%88%88%E8%B7%AF28%E8%99%9F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-brandRed hover:text-red-800 font-serifTc font-medium transition-colors">
+                <i class="fa-solid fa-diamond-turn-right"></i>
+                <span>開啟 Google 地圖導航（<span class="whitespace-nowrap">506彰化縣福興鄉橋頭村復興路28號</span>）</span>
+              </a>
             </div>
-            <!-- 右邊街景指引說明 -->
+            <!-- 右邊轉乘指引說明 -->
             <div class="space-y-3 text-xs sm:text-sm text-stone-700 font-serifTc">
               <div class="p-3 bg-white rounded-lg border border-stone-200/60">
-                <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">捷運中山站 3號出口</span></p>
-                <p class="text-stone-600 leading-relaxed">出站後請沿中山北路步行約5分鐘，右轉入<span class="whitespace-nowrap">中山北路二段39巷</span>即可抵達<span class="whitespace-nowrap">台北晶華酒店</span>。</p>
+                <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">高鐵台中站</span> / <span class="whitespace-nowrap">台鐵彰化站</span></p>
+                <p class="text-stone-600 leading-relaxed">抵達後可轉乘台灣好行鹿港祈福線或彰化客運，於<span class="whitespace-nowrap">福興穀倉站</span>或<span class="whitespace-nowrap">鹿港乘車處</span>下車步行約3分鐘抵達。</p>
               </div>
               <div class="p-3 bg-white rounded-lg border border-stone-200/60">
-                <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">捷運雙連站 1號出口</span></p>
-                <p class="text-stone-600 leading-relaxed">沿中山北路二段向南步行約6分鐘，左轉即可抵達。</p>
+                <p class="font-bold text-stone-800 mb-1"><span class="whitespace-nowrap">計程車與專車接駁</span></p>
+                <p class="text-stone-600 leading-relaxed">由<span class="whitespace-nowrap">高鐵台中站</span>搭乘計程車約25-30分鐘即可直達會場。</p>
               </div>
             </div>
           </div>
@@ -484,7 +492,7 @@
 
       <!-- 面板 2: 自行開車與停車 -->
       <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
-        <button onclick="toggleAccordion('acc-parking')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
+        <button type="button" onclick="toggleAccordion('acc-parking')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
           <div class="flex items-center gap-3 font-serifTc font-semibold text-stone-800">
             <i class="fa-solid fa-square-parking text-brandRed"></i>
             <span>自行開車與代客停車 Parking Guide</span>
@@ -493,24 +501,24 @@
         </button>
         <div id="acc-parking" class="accordion-content px-6 border-t border-stone-100 bg-stone-50/50">
           <div class="py-6 space-y-3 text-xs sm:text-sm text-stone-700 font-serifTc">
-            <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>國道一號由<span class="whitespace-nowrap">圓山交流道</span>下，建國高架道路至<span class="whitespace-nowrap">民權東路出口</span>下，沿中山北路直行即可抵達。</p>
-            <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>飯店內設有專屬地下地下地下地下停車場，賓客於宴席期間享免費停車消費折抵優惠。</p>
+            <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>國道一號由<span class="whitespace-nowrap">彰化交流道</span>下，接台19線彰鹿路往鹿港/福興方向直行即可抵達。</p>
+            <p class="leading-relaxed"><i class="fa-solid fa-circle-info text-brandGold mr-2"></i>園區旁設有專屬賓客停車場及周邊公有收費停車場，停車便利。</p>
           </div>
         </div>
       </div>
 
-      <!-- 面板 3: 公車資訊 -->
+      <!-- 面板 3: 公車客運路線 -->
       <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
-        <button onclick="toggleAccordion('acc-bus')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
+        <button type="button" onclick="toggleAccordion('acc-bus')" class="w-full px-6 py-5 flex items-center justify-between text-left bg-white hover:bg-stone-50 transition-colors">
           <div class="flex items-center gap-3 font-serifTc font-semibold text-stone-800">
             <i class="fa-solid fa-bus text-brandRed"></i>
-            <span>公車搭乘路線 Bus Routes</span>
+            <span>公車客運路線 Bus Routes</span>
           </div>
           <i id="icon-acc-bus" class="fa-solid fa-chevron-down text-stone-400 transition-transform duration-300"></i>
         </button>
         <div id="acc-bus" class="accordion-content px-6 border-t border-stone-100 bg-stone-50/50">
           <div class="py-6 text-xs sm:text-sm text-stone-700 font-serifTc leading-relaxed">
-            搭乘公車至<span class="whitespace-nowrap">捷運中山站</span>或<span class="whitespace-nowrap">國賓飯店站</span>下車，步行約3-5分鐘即可到達。<span class="whitespace-nowrap">可搭乘：218, 220, 221, 227, 247, 260, 287, 310</span>。
+            搭乘彰化客運至<span class="whitespace-nowrap">福興穀倉站</span>或<span class="whitespace-nowrap">鹿港總站</span>下車，步行約3分鐘即可到達。<span class="whitespace-nowrap">可搭乘路線：6900, 6934, 6936</span>。
           </div>
         </div>
       </div>
@@ -518,6 +526,7 @@
     </div>
   </section>
 
+  <!-- 出席回函 RSVP (隱藏式 Iframe 提交技術) -->
   <section id="rsvp" class="py-20 px-4 bg-stone-900 text-white relative">
     <div class="max-w-3xl mx-auto">
       
@@ -526,19 +535,19 @@
         <h2 class="font-serifTc text-3xl sm:text-4xl text-white mt-1 font-normal tracking-wide">出席回函 ‧ 誠摯邀約</h2>
         <div class="w-12 h-0.5 bg-brandGold mx-auto mt-4"></div>
         <p class="text-xs text-stone-400 font-serifTc mt-3">請於 2026年9月30日前 填寫回函，以便我們妥善安排席位</p>
-    </div>
+      </div>
 
-    <!-- 隱藏式 Iframe 提交技術 (無刷新提交) -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted !== 'undefined' && submitted) onIframeLoad()"></iframe>
+      <!-- 隱藏式 Iframe 提交目標 -->
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted !== 'undefined' && submitted) onIframeLoad()"></iframe>
 
-    <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLScqL0SiEtfhagig_SG0Q5JRSr7jFSasqFS8uEp1Jg_DJovsYQ/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)" class="bg-stone-800/80 rounded-3xl p-6 sm:p-10 border border-brandGold/30 shadow-2xl backdrop-blur-md space-y-6">
-      
-      <!-- 姓名 NAME -->
+      <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLScqL0SiEtfhagig_SG0Q5JRSr7jFSasqFS8uEp1Jg_DJovsYQ/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)" class="bg-stone-800/80 rounded-3xl p-6 sm:p-10 border border-brandGold/30 shadow-2xl backdrop-blur-md space-y-6">
+        
+        <!-- 姓名 NAME -->
         <div>
           <label class="block font-serifTc text-sm font-medium text-stone-200 mb-2">
             姓名 <span class="font-serifEn text-xs font-normal text-stone-400">NAME</span> <span class="text-brandRed">*</span>
           </label>
-          <input type="text" name="entry.389576733" required placeholder="請輸入您的真實姓名" class="w-full px-4 py-3 rounded-xl bg-stone-900/90 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brandGold focus:ring-1 focus:ring-brandGold transition-all font-serifTc text-sm" />
+          <input type="text" name="entry.389576733" id="guest-name" required placeholder="請輸入您的真實姓名" class="w-full px-4 py-3 rounded-xl bg-stone-900/90 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brandGold focus:ring-1 focus:ring-brandGold transition-all font-serifTc text-sm" />
         </div>
 
         <!-- 聯絡電話 PHONE / EMAIL -->
@@ -554,7 +563,7 @@
           <label class="block font-serifTc text-sm font-medium text-stone-200 mb-2">
             與新人的關係 <span class="font-serifEn text-xs font-normal text-stone-400">RELATIONSHIP</span> <span class="text-brandRed">*</span>
           </label>
-          <select name="entry.1966172540" required class="w-full px-4 py-3 rounded-xl bg-stone-900/90 border border-stone-700 text-white focus:outline-none focus:border-brandGold focus:ring-1 focus:ring-brandGold transition-all font-serifTc text-sm cursor-pointer">
+          <select name="entry.1966172540" id="guest-relationship" required class="w-full px-4 py-3 rounded-xl bg-stone-900/90 border border-stone-700 text-white focus:outline-none focus:border-brandGold focus:ring-1 focus:ring-brandGold transition-all font-serifTc text-sm cursor-pointer">
             <option value="" disabled selected>請選擇關係</option>
             <option value="男方家人親戚">男方家人親戚</option>
             <option value="男方好友">男方好友</option>
@@ -575,7 +584,6 @@
 
         <!-- 智能條件區域：人數 > 0 時才顯示 (飲食需求 & 兒童座椅) -->
         <div id="smart-conditional-fields" class="space-y-6 pt-2 hidden transition-all duration-500">
-          
           <div class="p-4 bg-brandGold/10 rounded-2xl border border-brandGold/30">
             <p class="text-xs text-brandGold font-serifTc mb-4"><i class="fa-solid fa-circle-check mr-1"></i> 感謝您的出席！請協助填寫隨行需求：</p>
             
@@ -603,15 +611,29 @@
               </div>
             </div>
           </div>
-
         </div>
 
-        <!-- 祝福話語 BLESSINGS -->
+        <!-- 祝福話語 BLESSINGS + ✨ Gemini AI 生成賀詞 -->
         <div>
-          <label class="block font-serifTc text-sm font-medium text-stone-200 mb-2">
-            給新人的祝福 <span class="font-serifEn text-xs font-normal text-stone-400">BLESSINGS</span>
-          </label>
-          <textarea name="entry.1947852565" rows="3" placeholder="留下您想對 LI & YU 說的溫馨話語..." class="w-full px-4 py-3 rounded-xl bg-stone-900/90 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brandGold focus:ring-1 focus:ring-brandGold transition-all font-serifTc text-sm resize-none"></textarea>
+          <div class="flex items-center justify-between mb-2">
+            <label class="font-serifTc text-sm font-medium text-stone-200">
+              給新人的祝福 <span class="font-serifEn text-xs font-normal text-stone-400">BLESSINGS</span>
+            </label>
+            <button type="button" onclick="generateAiBlessing()" id="ai-blessing-btn" class="px-2.5 py-1 rounded-lg bg-stone-700 hover:bg-stone-600 text-brandGold border border-brandGold/40 text-xs font-serifTc transition-all flex items-center gap-1.5 active:scale-95">
+              <i class="fa-solid fa-sparkles text-[10px]"></i>
+              <span>✨ AI 靈感賀詞</span>
+            </button>
+          </div>
+          
+          <textarea id="blessings-input" name="entry.1947852565" rows="3" placeholder="留下您想對 LI & YU 說的溫馨話語，或點擊右上角 ✨ 讓 AI 為您斟酌詩意美言..." class="w-full px-4 py-3 rounded-xl bg-stone-900/90 border border-stone-700 text-white placeholder-stone-500 focus:outline-none focus:border-brandGold focus:ring-1 focus:ring-brandGold transition-all font-serifTc text-sm resize-none"></textarea>
+          
+          <!-- AI賀詞微調工具列 -->
+          <div class="flex flex-wrap items-center gap-2 mt-2 text-[11px] text-stone-400">
+            <span class="text-stone-500">賀詞風格：</span>
+            <button type="button" onclick="setBlessingTone(event, 'poetic')" class="tone-tag px-2 py-0.5 rounded border border-brandGold/40 text-brandGold bg-stone-800">新中式詩意</button>
+            <button type="button" onclick="setBlessingTone(event, 'warm')" class="tone-tag px-2 py-0.5 rounded border border-stone-700 text-stone-400 hover:text-stone-200">溫暖真摯</button>
+            <button type="button" onclick="setBlessingTone(event, 'humorous')" class="tone-tag px-2 py-0.5 rounded border border-stone-700 text-stone-400 hover:text-stone-200">幽默俏皮</button>
+          </div>
         </div>
 
         <!-- 送出按鈕 -->
@@ -630,7 +652,7 @@
     <p class="font-serifTc text-[11px] text-stone-600 mt-1">策劃製作：極致新中式美學團隊</p>
   </footer>
 
-  <!-- 送出成功提示 Modal (取代原生的 alert) -->
+  <!-- 送出成功提示 Modal -->
   <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
     <div class="bg-white rounded-3xl p-8 max-w-sm w-full mx-4 text-center shadow-2xl border border-brandGold/40 transform scale-95 transition-transform duration-300">
       <div class="w-16 h-16 rounded-full bg-red-50 text-brandRed flex items-center justify-center mx-auto mb-4 text-2xl border border-brandRed/20">
@@ -640,16 +662,371 @@
       <p class="font-serifTc text-sm text-stone-600 mb-6 leading-relaxed">
         感謝您的祝福與填寫，我們極度期待在 2026.12.20 與您共同開啟這場美麗的冒險！
       </p>
-      <button onclick="closeModal()" class="w-full py-3 bg-brandRed text-white rounded-xl font-serifTc text-sm font-semibold hover:bg-red-800 transition-colors shadow-md">
+      <button onclick="closeModal()" type="button" class="w-full py-3 bg-brandRed text-white rounded-xl font-serifTc text-sm font-semibold hover:bg-red-800 transition-colors shadow-md">
         太棒了！
       </button>
     </div>
   </div>
 
-  <script>
-    var submitted = false;
+  <!-- ✨ Dress Code AI 穿搭顧問 Modal -->
+  <div id="outfit-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 p-4">
+    <div class="bg-stone-900 border border-brandGold/40 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-white shadow-2xl transform scale-95 transition-transform duration-300 relative max-h-[90vh] overflow-y-auto no-scrollbar">
+      
+      <button type="button" onclick="closeOutfitModal()" class="absolute top-5 right-5 text-stone-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
 
-    // ... existing countdown & accordion script ...
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brandGold/20 text-brandGold mb-2">
+          <i class="fa-solid fa-sparkles text-xl"></i>
+        </div>
+        <h3 class="font-serifTc text-xl font-bold text-stone-100">新中式穿搭靈感管家</h3>
+        <p class="text-xs text-stone-400 font-serifTc mt-1">告訴 AI 您的穿著偏好，即刻客製大氣得體的宴席造型</p>
+      </div>
+
+      <div class="space-y-4 font-serifTc text-sm">
+        <div>
+          <label class="block text-xs text-stone-300 mb-1.5">穿著身份 / 偏好剪裁</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" onclick="setOutfitGender(event, '女裝 (優雅裙裝/旗袍/中式套裝)')" class="gender-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs">女仕風格 (旗袍/裙裝)</button>
+            <button type="button" onclick="setOutfitGender(event, '男裝 (雅痞唐裝/復古西裝/休閒雅仕)')" class="gender-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">男仕風格 (唐裝/西服)</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs text-stone-300 mb-1.5">心儀的主色系</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" onclick="setOutfitColor(event, '旗袍紅 (#9E2A2B)')" class="color-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs">旗袍紅 (#9E2A2B)</button>
+            <button type="button" onclick="setOutfitColor(event, '摩登紫 (#6B46C1)')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">摩登紫 (#6B46C1)</button>
+            <button type="button" onclick="setOutfitColor(event, '復古暖金 (#D69E2E)')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">復古暖金 (#D69E2E)</button>
+            <button type="button" onclick="setOutfitColor(event, '老上海米黃 (#FEEBC8)')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">老上海米黃 (#FEEBC8)</button>
+          </div>
+        </div>
+
+        <button type="button" id="generate-outfit-btn" onclick="generateOutfitAdvice()" class="w-full py-3 bg-brandGold hover:bg-amber-600 text-stone-950 font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 mt-2">
+          <span>✨ 生成專屬穿搭指南</span>
+        </button>
+
+        <!-- 建議結果展示區 -->
+        <div id="outfit-result-box" class="p-4 bg-stone-950/60 rounded-2xl border border-stone-700/80 text-xs leading-relaxed text-stone-300 hidden">
+          <p id="outfit-result-text" class="whitespace-pre-line"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 0. Gemini API 整合設定
+    const apiKey = ""; // 執行環境會於執行階段自動注入
+    let currentTone = 'poetic';
+    let outfitGender = '女裝 (優雅裙裝/旗袍/中式套裝)';
+    let outfitColor = '旗袍紅 (#9E2A2B)';
+
+    // 指數退避重試的 API 呼叫工具函式
+    async function callGemini(payload, maxRetries = 5) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      const delays = [1000, 2000, 4000, 8000, 16000];
+
+      for (let attempt = 0; attempt <= maxRetries; attempt++) {
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP Error ${response.status}`);
+          }
+
+          const data = await response.json();
+          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (text) return text;
+          throw new Error('未獲取到有效回應內容');
+        } catch (err) {
+          if (attempt === maxRetries) throw err;
+          await new Promise(resolve => setTimeout(resolve, delays[attempt] || 1000));
+        }
+      }
+    }
+
+    // ✨ 功能一：Gemini AI 生成專屬靈感賀詞
+    function setBlessingTone(e, tone) {
+      currentTone = tone;
+      document.querySelectorAll('.tone-tag').forEach(tag => {
+        tag.className = 'tone-tag px-2 py-0.5 rounded border border-stone-700 text-stone-400 hover:text-stone-200';
+      });
+      if (e && e.currentTarget) {
+        e.currentTarget.className = 'tone-tag px-2 py-0.5 rounded border border-brandGold/40 text-brandGold bg-stone-800';
+      }
+    }
+
+    async function generateAiBlessing() {
+      const btn = document.getElementById('ai-blessing-btn');
+      const textarea = document.getElementById('blessings-input');
+      const name = document.getElementById('guest-name')?.value.trim() || '好友';
+      const rel = document.getElementById('guest-relationship')?.value || '朋友';
+
+      const toneDescriptions = {
+        poetic: '新中式詩意古風，字句清雅深情，四字成語與對仗兼具，契合百年好合之意',
+        warm: '真摯溫馨、語氣親切自然，如老友般娓娓道來，充滿幸福與祝福感',
+        humorous: '幽默風趣、輕快活潑，調侃中帶有滿滿的真誠愛意'
+      };
+
+      const fallbackBlessings = {
+        poetic: '良緣永結，佳偶天成。願維哲與加鈺攜手共赴這場人生最美的冒險，琴瑟和鳴、白首不相離，歲月靜好皆是彼此！',
+        warm: '最真摯的祝福送給維哲與加鈺！很開心能見證你們開啟人生最棒的冒險篇章，願你們未來的每一天都充滿笑聲、溫暖與滿滿的愛！',
+        humorous: '恭喜維哲與加鈺正式組隊成功，解鎖人生最大冒險副本！祝兩位永遠甜甜蜜蜜、幸福爆表，新婚快樂！'
+      };
+
+      const originalBtnHtml = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i> <span>撰寫中...</span>';
+
+      const systemPrompt = `你是一位精通台灣感性文化與新中式美學的首席婚禮策劃師。
+這場婚禮的新人是李維哲 (LI) 與 游加鈺 (YU)，婚禮的核心精神標語是「你是我這輩子最大的冒險」。
+請為賓客撰寫一段送給新人的婚禮祝賀詞。
+要求：
+1. 繁體中文（台灣習慣用語）。
+2. 字數約在 40~80 字之間。
+3. 語意真摯，貼合指定的風格與關係。
+4. 結尾請簡潔漂亮，不要輸出額外的招呼語或引號，直接輸出祝詞本體。`;
+
+      const userQuery = `賓客稱呼：${name}
+與新人關係：${rel}
+偏好風格：${toneDescriptions[currentTone]}
+請撰寫一段真切且令人印象深刻的婚禮祝福。`;
+
+      const payload = {
+        contents: [{ parts: [{ text: userQuery }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] }
+      };
+
+      try {
+        const blessing = await callGemini(payload);
+        textarea.value = blessing.trim();
+      } catch (e) {
+        textarea.value = fallbackBlessings[currentTone] || fallbackBlessings.poetic;
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHtml;
+      }
+    }
+
+    // ✨ 功能二：Gemini AI 穿搭指南生成器
+    function openOutfitModal() {
+      const modal = document.getElementById('outfit-modal');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('div').classList.remove('scale-95');
+        modal.querySelector('div').classList.add('scale-100');
+      }, 10);
+    }
+
+    function closeOutfitModal() {
+      const modal = document.getElementById('outfit-modal');
+      modal.classList.add('opacity-0');
+      modal.querySelector('div').classList.add('scale-95');
+      modal.querySelector('div').classList.remove('scale-100');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    function setOutfitGender(e, val) {
+      outfitGender = val;
+      document.querySelectorAll('.gender-btn').forEach(btn => {
+        btn.className = 'gender-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs';
+      });
+      if (e && e.currentTarget) {
+        e.currentTarget.className = 'gender-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs';
+      }
+    }
+
+    function setOutfitColor(e, val) {
+      outfitColor = val;
+      document.querySelectorAll('.color-btn').forEach(btn => {
+        btn.className = 'color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs';
+      });
+      if (e && e.currentTarget) {
+        e.currentTarget.className = 'color-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs';
+      }
+    }
+
+    async function generateOutfitAdvice() {
+      const btn = document.getElementById('generate-outfit-btn');
+      const box = document.getElementById('outfit-result-box');
+      const textElem = document.getElementById('outfit-result-text');
+
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-xs"></i> <span>顧問量身搭配中...</span>';
+
+      const systemPrompt = `你是一位專研新中式時尚與婚宴禮儀的高級造型顧問。
+婚禮地點在彰化福興穀倉（帶有文藝復古紅磚質感），Dress code 主題是新中式、老上海與摩登復古。
+請提供精準實用的穿搭建議。
+要求：
+1. 繁體中文，親切大方。
+2. 包含三大部分：【上身與服裝剪裁】、【配件與鞋履亮點】、【禁忌提醒 (如不搶新娘風采)】。
+3. 總字數約 120~180 字，條理清晰，排版優雅。`;
+
+      const userQuery = `賓客類型：${outfitGender}
+選擇色彩：${outfitColor}
+請給予契合新中式復古美學與福興穀倉婚宴場地的具體穿搭推薦。`;
+
+      const payload = {
+        contents: [{ parts: [{ text: userQuery }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] }
+      };
+
+      try {
+        const advice = await callGemini(payload);
+        textElem.textContent = advice.trim();
+        box.classList.remove('hidden');
+      } catch (e) {
+        textElem.textContent = '【上身與服裝剪裁】建議挑選帶有提花暗紋或中式盤扣設計的單品，與福興穀倉紅磚古蹟相互輝映。\n【配件與鞋履亮點】可搭配珍珠耳飾、玉石胸針或復古絲絨包款增添典雅質感。\n【禁忌提醒】避免全身純白或過於繁複拖尾禮服，讓焦點留給新人。';
+        box.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    // 1. 倒數計時器邏輯
+    function startCountdown() {
+      const targetTime = new Date(2026, 11, 20, 12, 0, 0).getTime();
+
+      function update() {
+        const now = new Date().getTime();
+        const difference = targetTime - now;
+
+        if (difference > 0) {
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+          const dElem = document.getElementById('timer-days');
+          const hElem = document.getElementById('timer-hours');
+          const mElem = document.getElementById('timer-minutes');
+          const sElem = document.getElementById('timer-seconds');
+
+          if (dElem) dElem.textContent = String(days).padStart(2, '0');
+          if (hElem) hElem.textContent = String(hours).padStart(2, '0');
+          if (mElem) mElem.textContent = String(minutes).padStart(2, '0');
+          if (sElem) sElem.textContent = String(seconds).padStart(2, '0');
+        }
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
+
+    // 2. 交通摺疊面板 (Accordion)
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      if (!content) return;
+
+      const isOpen = content.classList.contains('active');
+      if (isOpen) {
+        content.classList.remove('active');
+        if (icon) icon.classList.remove('rotate-180');
+      } else {
+        content.classList.add('active');
+        if (icon) icon.classList.add('rotate-180');
+      }
+    }
+
+    // 3. 智能條件欄位切換 (人數 > 0 時才顯示飲食需求與兒童椅)
+    function handleAttendanceChange(val) {
+      const container = document.getElementById('smart-conditional-fields');
+      const count = parseInt(val, 10);
+      if (!container) return;
+
+      const selects = container.querySelectorAll('select');
+      if (!isNaN(count) && count > 0) {
+        container.classList.remove('hidden');
+        selects.forEach(sel => sel.removeAttribute('disabled'));
+      } else {
+        container.classList.add('hidden');
+        selects.forEach(sel => sel.setAttribute('disabled', 'true'));
+      }
+    }
+
+    // 4. 表單提交狀態與 Modal 控制
+    let isSubmitting = false;
+
+    function handleSubmit(e) {
+      if (isSubmitting) {
+        e.preventDefault();
+        return;
+      }
+      isSubmitting = true;
+      submitted = true;
+
+      const btnText = document.getElementById('submit-btn-text');
+      const btnIcon = document.getElementById('submit-btn-icon');
+      const btn = document.getElementById('submit-btn');
+
+      if (btnText) btnText.textContent = '傳送回函中...';
+      if (btnIcon) btnIcon.className = 'fa-solid fa-spinner fa-spin text-xs';
+      if (btn) btn.disabled = true;
+
+      setTimeout(() => {
+        if (submitted) {
+          onIframeLoad();
+        }
+      }, 1500);
+    }
+
+    function onIframeLoad() {
+      if (!submitted) return;
+      submitted = false;
+      isSubmitting = false;
+
+      const btnText = document.getElementById('submit-btn-text');
+      const btnIcon = document.getElementById('submit-btn-icon');
+      const btn = document.getElementById('submit-btn');
+
+      if (btnText) btnText.textContent = '確認送出回函';
+      if (btnIcon) btnIcon.className = 'fa-solid fa-paper-plane text-xs';
+      if (btn) btn.disabled = false;
+
+      const modal = document.getElementById('success-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          const inner = modal.querySelector('div');
+          if (inner) {
+            inner.classList.remove('scale-95');
+            inner.classList.add('scale-100');
+          }
+        }, 10);
+      }
+
+      const form = document.getElementById('rsvp-form');
+      if (form) {
+        form.reset();
+        handleAttendanceChange(0);
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('success-modal');
+      if (modal) {
+        modal.classList.add('opacity-0');
+        const inner = modal.querySelector('div');
+        if (inner) {
+          inner.classList.add('scale-95');
+          inner.classList.remove('scale-100');
+        }
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+    }
 
     // 5. 輪播藝廊控制器 Logic
     let currentSlide = 0;
@@ -675,13 +1052,15 @@
       }
     }
 
-    function nextSlide() {
+    function nextSlide(e) {
+      if (e) e.stopPropagation();
       currentSlide = (currentSlide + 1) % totalSlides;
       updateCarousel();
       resetCarouselTimer();
     }
 
-    function prevSlide() {
+    function prevSlide(e) {
+      if (e) e.stopPropagation();
       currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
       updateCarousel();
       resetCarouselTimer();
@@ -710,22 +1089,44 @@
       if (!container) return;
 
       let touchStartX = 0;
-      let touchEndX = 0;
+      let touchStartY = 0;
 
       container.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
       }, { passive: true });
 
       container.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        if (touchStartX - touchEndX > 50) {
-          nextSlide();
-        } else if (touchEndX - touchStartX > 50) {
-          prevSlide();
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX > 0) nextSlide();
+          else prevSlide();
         }
       }, { passive: true });
 
-      // 懸停時暫停自動輪播
+      let mouseStartX = 0;
+      let isMouseDown = false;
+
+      container.addEventListener('mousedown', (e) => {
+        if (e.target.closest('button')) return;
+        isMouseDown = true;
+        mouseStartX = e.clientX;
+      });
+
+      window.addEventListener('mouseup', (e) => {
+        if (!isMouseDown) return;
+        isMouseDown = false;
+        const diffX = mouseStartX - e.clientX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX > 0) nextSlide();
+          else prevSlide();
+        }
+      });
+
       container.addEventListener('mouseenter', () => {
         if (carouselTimer) clearInterval(carouselTimer);
       });
@@ -734,13 +1135,12 @@
       });
     }
 
-    // 初始化執行
-    window.onload = function() {
+    window.addEventListener('DOMContentLoaded', () => {
       startCountdown();
       updateCarousel();
       startCarouselTimer();
       initTouchCarousel();
-    };
+    });
   </script>
 </body>
 </html>
