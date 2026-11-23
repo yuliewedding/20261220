@@ -101,23 +101,29 @@
     </div>
   </nav>
 
-  <!-- 首頁全螢幕封面背景 -->
-  <section class="relative min-h-screen min-h-[100dvh] flex items-end justify-center overflow-hidden bg-stone-900 text-white">
+  <!-- 首頁全螢幕封面背景 (電腦版橫幅 / 手機版直幅自動切換) -->
+  <section class="relative min-h-screen min-h-[100dvh] flex items-end md:items-center justify-center overflow-hidden bg-stone-900 text-white">
     <div class="absolute inset-0 z-0">
-      <img
-        src="https://i.postimg.cc/C1Gj7P3f/S-425074711-0.jpg"
-        alt="Li & Yu Wedding Cover"
-        referrerpolicy="no-referrer"
-        loading="eager"
-        fetchpriority="high"
-        class="w-full h-full object-cover object-[50%_22%] sm:object-[50%_20%] opacity-95 transition-all duration-500"
-        onerror="this.onerror=null; this.src='https://i.postimg.cc/3Rg1kJ9J/S-425074717.jpg';"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/40 to-transparent"></div>
+      <picture>
+        <!-- 電腦版與寬螢幕 (768px 以上)：顯示橫幅浪漫照片 -->
+        <source media="(min-width: 768px)" srcset="https://i.postimg.cc/3Rg1kJ9J/S-425074717.jpg" />
+        <!-- 手機版直式螢幕 (768px 以下)：顯示直幅雙人牽手照 -->
+        <img
+          src="https://i.postimg.cc/C1Gj7P3f/S-425074711-0.jpg"
+          alt="Li & Yu Wedding Cover"
+          referrerpolicy="no-referrer"
+          loading="eager"
+          decoding="sync"
+          fetchpriority="high"
+          class="w-full h-full object-cover object-[50%_20%] md:object-center opacity-100 transition-all duration-500"
+          onerror="this.onerror=null; this.src='https://i.postimg.cc/3Rg1kJ9J/S-425074717.jpg';"
+        />
+      </picture>
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/25 via-35% to-transparent md:bg-gradient-to-t md:from-stone-950/85 md:via-stone-900/35 md:to-stone-900/25"></div>
     </div>
 
     <!-- 封面文字內容 -->
-    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center pt-20 pb-14 sm:pb-12">
+    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center pt-20 pb-14 md:py-20">
       <p class="font-serifEn text-lg sm:text-2xl text-brandGold tracking-widest mb-3 uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">Wedding Invitation</p>
       
       <!-- 婚禮主題雙姓氏標題 -->
