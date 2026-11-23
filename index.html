@@ -547,8 +547,12 @@
             </div>
           </div>
 
-          <div class="mt-8 pt-4 border-t border-brandGold/20 text-xs text-stone-500 font-serifTc">
-            * 貼心提醒：12:00 開放賓客入席交流合照，12:30 午宴準時開席。
+          <div class="mt-8 pt-4 border-t border-brandGold/20 text-xs text-stone-500 font-serifTc space-y-2">
+            <p>* 貼心提醒：12:00 午宴準時開始，建議賓客提早抵達福興穀倉入席與留影。</p>
+            <button type="button" onclick="downloadWeddingCalendar()" class="inline-flex items-center gap-1.5 text-brandRed hover:text-red-800 font-medium transition-colors">
+              <i class="fa-regular fa-calendar-plus text-xs"></i>
+              <span>一鍵加入手機行事曆（2026/12/20 12:00）</span>
+            </button>
           </div>
         </div>
 
@@ -561,40 +565,40 @@
             </div>
 
             <p class="text-xs text-stone-600 font-serifTc mb-6 leading-relaxed">
-              為配合我們特別規劃的新中式復古盛會，誠摯邀請您以以下風格元素或色系出席，共赴這場摩登復古美宴：
+              為配合我們特別規劃的新中式復古盛會，誠摯邀請您以以下風格元素出席，自在穿出屬於您的優雅與氣場：
             </p>
 
-            <div class="grid grid-cols-2 gap-4">
-              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#9E2A2B] shadow-sm shrink-0 border border-white"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="p-4 rounded-2xl bg-[#FBF5E6]/75 border border-brandGold/30 flex items-center justify-between">
                 <div>
-                  <p class="text-xs font-bold text-stone-800">旗袍</p>
-                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#9E2A2B</p>
+                  <p class="text-sm font-bold text-stone-800">旗袍</p>
+                  <p class="text-[11px] text-stone-500 mt-0.5">典雅剪裁 ‧ 東方韻味</p>
                 </div>
+                <span class="text-[11px] font-serifEn tracking-wider text-brandRed/80 uppercase">Qipao</span>
               </div>
 
-              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#6B46C1] shadow-sm shrink-0 border border-white"></div>
+              <div class="p-4 rounded-2xl bg-[#FBF5E6]/75 border border-brandGold/30 flex items-center justify-between">
                 <div>
-                  <p class="text-xs font-bold text-stone-800">摩登</p>
-                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#6B46C1</p>
+                  <p class="text-sm font-bold text-stone-800">摩登</p>
+                  <p class="text-[11px] text-stone-500 mt-0.5">俐落線條 ‧ 當代氣息</p>
                 </div>
+                <span class="text-[11px] font-serifEn tracking-wider text-brandRed/80 uppercase">Modern</span>
               </div>
 
-              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#D69E2E] shadow-sm shrink-0 border border-white"></div>
+              <div class="p-4 rounded-2xl bg-[#FBF5E6]/75 border border-brandGold/30 flex items-center justify-between">
                 <div>
-                  <p class="text-xs font-bold text-stone-800">復古</p>
-                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#D69E2E</p>
+                  <p class="text-sm font-bold text-stone-800">復古</p>
+                  <p class="text-[11px] text-stone-500 mt-0.5">歲月質感 ‧ 經典層次</p>
                 </div>
+                <span class="text-[11px] font-serifEn tracking-wider text-brandRed/80 uppercase">Retro</span>
               </div>
 
-              <div class="p-3 rounded-2xl bg-[#FBF5E6]/70 border border-brandGold/30 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#FEEBC8] shadow-sm shrink-0 border border-brandGold/50"></div>
+              <div class="p-4 rounded-2xl bg-[#FBF5E6]/75 border border-brandGold/30 flex items-center justify-between">
                 <div>
-                  <p class="text-xs font-bold text-stone-800">老上海</p>
-                  <p class="text-[10px] text-stone-500 font-serifEn uppercase">#FEEBC8</p>
+                  <p class="text-sm font-bold text-stone-800">老上海</p>
+                  <p class="text-[11px] text-stone-500 mt-0.5">復古華麗 ‧ 懷舊風華</p>
                 </div>
+                <span class="text-[11px] font-serifEn tracking-wider text-brandRed/80 uppercase">Shanghai</span>
               </div>
             </div>
           </div>
@@ -692,23 +696,20 @@
                   <span class="whitespace-nowrap">計程車搭乘</span>
                 </p>
                 <p class="text-stone-600 leading-relaxed">
-                  由<span class="whitespace-nowrap">高鐵台中站</span>搭乘計程車，車程約25–30分鐘，請導航至「福興穀倉」。
+                  高鐵台中站： 搭乘計程車約25–30分鐘。
+                </p>
+                <p class="text-stone-600 leading-relaxed">
+                  台鐵彰化站： 搭乘計程車約20–25分鐘。
                 </p>
                 <p class="text-brandRed font-medium bg-brandRed/5 px-3 py-1.5 rounded-lg border border-brandRed/15">
-                  跟司機說明｜福興穀倉（福興鄉農會辦事處）
+                  跟司機說明｜福興穀倉（靠近福興鄉農會辦事處）
                 </p>
               </div>
             </div>
 
             <div class="bg-white rounded-2xl p-3 sm:p-4 border border-brandGold/30 shadow-sm space-y-2.5">
               <div class="flex items-center justify-between px-1">
-                <span class="font-serifTc text-xs sm:text-sm font-semibold text-stone-800 flex items-center gap-1.5">
-                  <i class="fa-solid fa-location-crosshairs text-brandRed"></i>
-                  <span>福興穀倉入口與午宴位置實景指引</span>
-                </span>
-                <span class="font-serifEn text-[11px] text-brandGold uppercase tracking-wider font-semibold">Entrance Guide</span>
-              </div>
-              <div class="rounded-xl overflow-hidden border border-stone-200/80 bg-stone-100">
+              <div class="rounded-xl overflow-hidden border border-stone-200/80 bg-stone-100 relative">
                 <img
                   src="https://i.postimg.cc/5tYTmDYg/wu-yan-wei-zhi.webp"
                   alt="福興穀倉婚禮午宴位置實景指引"
@@ -716,10 +717,12 @@
                   loading="lazy"
                   class="w-full h-auto object-contain block"
                 />
+                <!-- 左側白色空地停車位置往左箭頭標示 -->
+                <div class="absolute left-[5%] sm:left-[6%] bottom-[31%] sm:bottom-[33%] z-10 flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-brandRed text-white border-2 border-[#FFE5A3] shadow-[0_6px_18px_rgba(0,0,0,0.65)] pointer-events-none">
+                  <i class="fa-solid fa-arrow-left text-brandRed bg-[#FFFDF7] w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shrink-0 shadow-xs"></i>
+                  <span class="font-serifTc text-sm sm:text-base font-extrabold tracking-wider whitespace-nowrap drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">停車位置</span>
+                </div>
               </div>
-              <p class="text-[11px] sm:text-xs text-stone-500 font-serifTc px-1 leading-relaxed">
-                * 抵達復興路路口時，請由「福興鄉農會」白色倉庫右側通道進入，即可抵達紅色標示處的婚禮午宴會場。
-              </p>
             </div>
           </div>
         </div>
@@ -882,12 +885,12 @@
         </div>
 
         <div>
-          <label class="block text-xs text-stone-300 mb-1.5">心儀的主色系</label>
+          <label class="block text-xs text-stone-300 mb-1.5">心儀的風格調性</label>
           <div class="grid grid-cols-2 gap-2">
-            <button type="button" onclick="setOutfitColor(event, '旗袍紅 (#9E2A2B)')" class="color-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs">旗袍紅 (#9E2A2B)</button>
-            <button type="button" onclick="setOutfitColor(event, '摩登紫 (#6B46C1)')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">摩登紫 (#6B46C1)</button>
-            <button type="button" onclick="setOutfitColor(event, '復古暖金 (#D69E2E)')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">復古暖金 (#D69E2E)</button>
-            <button type="button" onclick="setOutfitColor(event, '老上海米黃 (#FEEBC8)')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">老上海米黃 (#FEEBC8)</button>
+            <button type="button" onclick="setOutfitColor(event, '典雅旗袍調性')" class="color-btn active px-3 py-2 rounded-xl bg-stone-800 border border-brandGold text-brandGold text-xs">典雅旗袍調性</button>
+            <button type="button" onclick="setOutfitColor(event, '摩登俐落調性')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">摩登俐落調性</button>
+            <button type="button" onclick="setOutfitColor(event, '復古暖調氛圍')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">復古暖調氛圍</button>
+            <button type="button" onclick="setOutfitColor(event, '老上海懷舊風華')" class="color-btn px-3 py-2 rounded-xl bg-stone-800 border border-stone-700 text-stone-300 text-xs">老上海懷舊風華</button>
           </div>
         </div>
 
@@ -907,7 +910,7 @@
     const apiKey = "";
     let currentTone = 'poetic';
     let outfitGender = '女裝 (優雅裙裝/旗袍/中式套裝)';
-    let outfitColor = '旗袍紅 (#9E2A2B)';
+    let outfitColor = '典雅旗袍調性';
 
     async function callGemini(payload, maxRetries = 5) {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
@@ -1291,10 +1294,39 @@
       selectGalleryPhoto(nextIndex);
     }
 
+    // 6. 一鍵下載婚禮行事曆 (.ics)
+    function downloadWeddingCalendar() {
+      const icsContent = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Li & Yu Wedding//2026//ZH',
+        'BEGIN:VEVENT',
+        'UID:li-yu-wedding-20261220@fuxing-granary',
+        'DTSTAMP:20261123T120000Z',
+        'DTSTART;TZID=Asia/Taipei:20261220T120000',
+        'DTEND;TZID=Asia/Taipei:20261220T153000',
+        'SUMMARY:李維哲 & 游加鈺 婚禮午宴',
+        'LOCATION:福興穀倉（彰化縣福興鄉橋頭村復興路28號）',
+        'DESCRIPTION:穀藏良緣・喜結豐年｜午宴 12:00 準時開始，誠摯邀請您共赴喜宴。',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'Li-Yu-Wedding-20261220.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       startCountdown();
       selectGalleryPhoto(0);
     });
   </script>
 </body>
-</html>
+</html></selection-tag>
