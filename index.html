@@ -102,7 +102,7 @@
   </nav>
 
   <!-- 首頁全螢幕封面背景 -->
-  <section class="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden bg-stone-900 text-white">
+  <section class="relative min-h-screen min-h-[100dvh] flex items-end sm:items-center justify-center overflow-hidden bg-stone-900 text-white">
     <div class="absolute inset-0 z-0">
       <img
         src="https://i.postimg.cc/3Rg1kJ9J/S-425074717.jpg"
@@ -110,35 +110,35 @@
         referrerpolicy="no-referrer"
         loading="eager"
         fetchpriority="high"
-        class="w-full h-full object-cover object-[50%_25%] sm:object-center sm:scale-105 opacity-90 transition-all duration-500"
+        class="w-full h-full object-cover object-[80%_22%] sm:object-center sm:scale-105 opacity-95 transition-all duration-500"
         onerror="this.onerror=null; this.src='https://i.postimg.cc/yYSGKsCx/S-425074712-0.jpg';"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/20 to-stone-900/25"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/35 to-stone-900/15"></div>
     </div>
 
     <!-- 封面文字內容 -->
-    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center pt-20">
-      <p class="font-serifEn text-lg sm:text-2xl text-brandGold tracking-widest mb-3 uppercase">Wedding Invitation</p>
+    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center pt-20 pb-20 sm:pb-0">
+      <p class="font-serifEn text-lg sm:text-2xl text-brandGold tracking-widest mb-3 uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">Wedding Invitation</p>
       
       <!-- 婚禮主題雙姓氏標題 -->
-      <h1 class="font-serifEn text-5xl sm:text-7xl font-light tracking-wider mb-6 text-white drop-shadow-md">
+      <h1 class="font-serifEn text-5xl sm:text-7xl font-light tracking-wider mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
         LI <span class="text-brandGold text-3xl sm:text-5xl font-serifTc italic">&amp;</span> YU
       </h1>
 
-      <div class="w-12 h-px bg-brandGold/60 my-2"></div>
+      <div class="w-12 h-px bg-brandGold/80 my-2"></div>
 
       <!-- 靈魂標語 -->
-      <p class="font-serifTc text-xl sm:text-3xl tracking-widest text-stone-100 font-light my-6 drop-shadow">
+      <p class="font-serifTc text-xl sm:text-3xl tracking-widest text-stone-100 font-light my-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]">
         「你是我這輩子最大的冒險」
       </p>
 
       <!-- 日期與午宴地點提示 -->
-      <p class="font-serifEn text-base sm:text-lg text-stone-300 tracking-widest mt-2">
+      <p class="font-serifEn text-base sm:text-lg text-stone-200 tracking-widest mt-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)]">
         2026 . 12 . 20 &nbsp;|&nbsp; LUNCH AT 12:00 PM
       </p>
 
       <!-- 向下引導箭頭 -->
-      <a href="#countdown" class="mt-12 text-brandGold/80 hover:text-white transition-colors animate-bounce">
+      <a href="#countdown" class="mt-8 sm:mt-12 text-brandGold/90 hover:text-white transition-colors animate-bounce">
         <i class="fa-solid fa-chevron-down text-xl"></i>
       </a>
     </div>
