@@ -107,7 +107,7 @@
   <!-- 首頁全螢幕封面背景 (電腦版橫幅 / 手機版直幅自動切換) -->
   <section class="relative min-h-screen min-h-[100dvh] flex items-end md:items-center justify-center overflow-hidden bg-stone-900 text-white">
     <div class="absolute inset-0 z-0">
-      <picture>
+      <picture class="block w-full h-full">
         <!-- 電腦版與寬螢幕 (768px 以上)：顯示橫幅浪漫照片 -->
         <source media="(min-width: 768px)" srcset="https://i.postimg.cc/3Rg1kJ9J/S-425074717.jpg" />
         <!-- 手機版直式螢幕 (768px 以下)：更新為指定直式婚紗照 (IMG-3957) -->
@@ -124,22 +124,29 @@
       </picture>
       <div class="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/60 via-40% to-transparent md:bg-gradient-to-t md:from-stone-950/90 md:via-stone-950/45 md:to-stone-900/25"></div>
     </div>
-
     <!-- 封面文字內容 (手機版收攏於最下方深色石牆區，完全不遮擋新人臉部) -->
-    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center pt-20 pb-8 md:py-20">
-      <p class="font-serifEn text-base sm:text-2xl font-bold text-[#F5D6A1] tracking-[0.22em] mb-1.5 md:mb-3 uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Wedding Invitation</p>
+    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto flex flex-col items-center pt-20 pb-8 md:py-20 md:pr-[24%]">
+      <p class="font-serifEn text-sm sm:text-xl font-bold text-[#F5D6A1] tracking-[0.22em] mb-2 md:mb-3 uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Wedding Invitation</p>
       
-      <!-- 婚禮主題雙姓氏標題 -->
-      <h1 class="font-serifEn text-5xl sm:text-8xl font-semibold tracking-wider mb-2.5 md:mb-5 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
-        LI <span class="text-[#F5D6A1] text-3xl sm:text-6xl font-serifTc italic font-normal">&amp;</span> YU
-      </h1>
+      <!-- 婚禮主題專屬 LOGO (鎖定精巧高度，避免撐開版面) -->
+      <div class="my-1.5 md:my-3 flex items-center justify-center">
+        <img
+          src="https://i.postimg.cc/8CTgmTgD/ly-03.png"
+          alt="LI & YU Wedding Logo"
+          referrerpolicy="no-referrer"
+          class="h-20 sm:h-28 md:h-32 w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]"
+          onerror="this.outerHTML='<h1 class=\'font-serifEn text-5xl sm:text-7xl font-semibold tracking-wider text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]\'>LI <span class=\'text-[#F5D6A1] text-3xl sm:text-5xl font-serifTc italic font-normal\'>&amp;</span> YU</h1>';"
+        />
+      </div>
 
-      <div class="w-12 md:w-14 h-px bg-[#F5D6A1]/90 my-1.5 md:my-2"></div>
+      <div class="w-12 md:w-14 h-px bg-[#F5D6A1]/90 my-2 md:my-3"></div>
 
-      <!-- 婚禮主標語 -->
-      <div class="my-2.5 md:my-5 flex flex-col items-center drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+      <!-- 婚禮主標語：將雙囍圓印章嵌入「穀藏良緣」與「喜結豐年」正中央 -->
+      <div class="my-2 md:my-4 flex items-center justify-center gap-2.5 sm:gap-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+        <span class="font-serifTc text-lg sm:text-3xl tracking-[0.2em] text-white font-medium">穀藏良緣</span>
+        
         <!-- 喜帖同款：宣紙米白底・黑金雙層回紋圓框・朱紅圓體雙囍印章 -->
-        <div class="w-10 h-10 sm:w-14 sm:h-14 mb-1.5 md:mb-2.5 drop-shadow-md">
+        <span class="inline-flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 shrink-0 drop-shadow-md">
           <svg viewBox="0 0 120 120" class="w-full h-full" aria-label="雙囍印章">
             <!-- 宣紙米白圓底 -->
             <circle cx="60" cy="60" r="56" fill="#FDFBF7" />
@@ -175,10 +182,9 @@
               <rect x="52" y="67" width="16" height="6.5" />
             </g>
           </svg>
-        </div>
-        <p class="font-serifTc text-lg sm:text-3xl tracking-[0.2em] text-white font-medium">
-          穀藏良緣・喜結豐年
-        </p>
+        </span>
+
+        <span class="font-serifTc text-lg sm:text-3xl tracking-[0.2em] text-white font-medium">喜結豐年</span>
       </div>
 
       <!-- 日期與午宴地點提示 -->
